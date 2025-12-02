@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding: Find Your Vibe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#F472B6", // pink-400
+            "secondary": "#A78BFA", // violet-400
+            "background-light": "#FEFBFD",
+            "background-dark": "#1C161A",
+            "text-light": "#1C161A",
+            "text-dark": "#F7F2F5",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "1.5rem",
+            "xl": "2.5rem",
+            "full": "9999px"
+          },
+          boxShadow: {
+            'soft': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03)',
+            'soft-dark': '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1)',
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background: linear-gradient(170deg, #FFF0F5 0%, #F5F3FF 50%, #FFF5F2 100%);
+    }
+    .dark body {
+      background: linear-gradient(170deg, #2A1B24 0%, #201E30 50%, #2B1D19 100%);
+    }
+    body {
+      min-height: max(884px, 100dvh);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden p-6">
+<main class="flex flex-1 flex-col items-center justify-between text-center">
+<div class="w-full pt-4">
+<div class="flex w-full flex-row items-center justify-center gap-2">
+<div class="h-1.5 w-6 rounded-full bg-primary/20 dark:bg-primary/30"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary/20 dark:bg-primary/30"></div>
+<div class="h-1.5 w-10 rounded-full bg-gradient-to-r from-primary to-secondary"></div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center space-y-4">
+<div class="w-full max-w-sm">
+<div class="aspect-square w-full max-w-xs mx-auto">
+<div class="h-full w-full bg-cover bg-center bg-no-repeat" data-alt="Abstract illustration of two overlapping soft, glowing circular shapes, one pink and one purple, representing connection and vibes." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgc_3Jphn_QRGWtEZXtvfU3CRDblc8lNcIgbCRN6SIzDm35RmX0udlcHu-hkTigkIUaUxugJI5bLUXG4qbcRcgWAT_Tdw0YCFjhQoKKiQMXWRBizBZ7XpSlO3qKE9PzDaROMYgfM7epRi7J1cEyZC_UYtYFaik_0ug_9DNOrmg51jBWaALOtlABa0psXt5uuFcknarqhNSG6N-Ahykhc_sqWVqotRHx4lppFpnZCnxJkOkqkfhFlUuYnDAXtYkCEAvABYtp-n1DpY");'></div>
+</div>
+</div>
+<div class="space-y-2 px-4">
+<h1 class="text-text-light dark:text-text-dark tracking-tight text-4xl font-bold leading-tight">Find your vibe</h1>
+<p class="text-text-light/70 dark:text-text-dark/70 text-base font-normal leading-relaxed max-w-xs mx-auto">Connect with people who share your energy and interests.</p>
+</div>
+</div>
+<div class="w-full max-w-sm pb-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-6 bg-gradient-to-r from-primary to-secondary text-white text-lg font-bold tracking-wide shadow-soft dark:shadow-soft-dark transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+<span class="truncate">Get Started</span>
+<span class="material-symbols-outlined ml-2 text-2xl">arrow_forward</span>
+</button>
+</div>
+</main>
+</div>
+
+</body></html>

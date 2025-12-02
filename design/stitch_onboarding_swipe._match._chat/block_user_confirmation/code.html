@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Block User Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b8c",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark p-4">
+<!-- Background Image/Blur Effect -->
+<div class="absolute inset-0 z-0 h-full w-full bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wzNjAzNTV8MHwxfGFsbHx8fHx8fHx8fDE3MTk5MzY5OTV8&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080')]"></div>
+<div class="absolute inset-0 z-10 h-full w-full bg-black/30 backdrop-blur-lg"></div>
+<!-- Dialog Card -->
+<div class="relative z-20 flex w-full max-w-sm flex-col items-center rounded-xl bg-white/70 p-6 shadow-2xl shadow-black/10 backdrop-blur-xl dark:bg-black/40">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
+<span class="material-symbols-outlined text-4xl text-primary">block</span>
+</div>
+<h2 class="text-[#1b0d14] dark:text-white tracking-light text-[28px] font-bold leading-tight text-center pb-3 pt-2">Block User?</h2>
+<p class="text-slate-600 dark:text-slate-300 text-base font-normal leading-normal pb-6 pt-1 text-center">
+                Are you sure you want to block this user? You will no longer see their profile or receive messages from them.
+            </p>
+<div class="flex w-full flex-col items-stretch gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95">
+<span class="truncate">Block</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary/20 text-primary dark:bg-white/10 dark:text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95">
+<span class="truncate">Cancel</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

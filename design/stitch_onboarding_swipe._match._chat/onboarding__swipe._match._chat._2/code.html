@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DateVibe Onboarding</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes floatDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+    .animate-float-up {
+      animation: floatUp 4s ease-in-out infinite;
+    }
+    .animate-float-down {
+      animation: floatDown 4s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-light": "#FF7A85",
+            "primary-dark": "#F0637C",
+            "background-light": "#FFF7F9",
+            "background-dark": "#1C0D13",
+            "text-light": "#1B0D14",
+            "text-dark": "#FDEFF4"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "1.5rem",
+            "xl": "2.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: 100dvh;
+      background: linear-gradient(180deg, #FFF7F9 0%, #E9F4FF 100%);
+    }
+    .dark body {
+      background: linear-gradient(180deg, #1C0D13 0%, #10162B 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col text-text-light dark:text-text-dark group/design-root overflow-x-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute -top-[15%] -left-[30%] h-96 w-96 rounded-full bg-pink-300/20 blur-3xl opacity-50 dark:opacity-30"></div>
+<div class="absolute -bottom-[20%] -right-[30%] h-96 w-96 rounded-full bg-sky-300/20 blur-3xl opacity-50 dark:opacity-30"></div>
+</div>
+<div class="relative z-10 flex flex-1 flex-col p-6">
+<header class="flex items-center justify-between pb-4">
+<button class="flex size-10 items-center justify-center rounded-full bg-black/5 dark:bg-white/5">
+<span class="material-symbols-outlined text-text-light/70 dark:text-text-dark/70" style="font-size: 24px;">arrow_back_ios_new</span>
+</button>
+<button class="text-base font-bold text-primary-light dark:text-primary-dark">Skip</button>
+</header>
+<div class="flex w-full flex-row items-center justify-center gap-2 py-5">
+<div class="h-2 w-2 rounded-full bg-black/10 dark:bg-white/20"></div>
+<div class="h-2.5 w-8 rounded-full bg-gradient-to-r from-primary-light to-primary-dark shadow-md shadow-pink-500/20"></div>
+<div class="h-2 w-2 rounded-full bg-black/10 dark:bg-white/20"></div>
+</div>
+<div class="relative mx-auto my-12 flex h-72 w-72 items-center justify-center">
+<div class="absolute -left-4 top-10 flex size-14 items-center justify-center rounded-2xl border border-white/30 bg-white/40 shadow-xl shadow-sky-500/10 backdrop-blur-lg dark:border-white/10 dark:bg-white/10 animate-float-up">
+<span class="material-symbols-outlined text-4xl text-sky-400">chat_bubble</span>
+</div>
+<div class="absolute -right-4 bottom-16 flex size-16 items-center justify-center rounded-2xl border border-white/30 bg-white/40 shadow-xl shadow-pink-500/20 backdrop-blur-lg dark:border-white/10 dark:bg-white/10 animate-float-down">
+<span class="material-symbols-outlined text-5xl text-pink-500" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="absolute h-64 w-48 rotate-[8deg] rounded-xl border border-white/10 bg-gradient-to-br from-purple-200 to-blue-200 shadow-lg dark:from-purple-900/40 dark:to-blue-900/40" data-alt="Abstract user profile card tilted to the right."></div>
+<div class="absolute h-64 w-48 -rotate-[8deg] rounded-xl border border-white/10 bg-gradient-to-br from-pink-200 to-rose-200 shadow-lg dark:from-pink-900/40 dark:to-rose-900/40" data-alt="Abstract user profile card tilted to the left."></div>
+<div class="absolute h-64 w-48 rounded-xl border border-white/20 bg-white/50 p-3 shadow-2xl backdrop-blur-lg dark:border-white/10 dark:bg-white/10 dark:backdrop-blur-xl" data-alt="Frontmost abstract user profile card.">
+<div class="h-full w-full rounded-lg bg-gradient-to-br from-rose-300 to-peach-300 dark:from-rose-800/50 dark:to-orange-800/50" data-alt="Placeholder area for user photo."></div>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="flex flex-col items-center">
+<h1 class="text-center text-4xl font-extrabold leading-tight tracking-tighter text-text-light dark:text-text-dark">Swipe. Match. Chat.</h1>
+<p class="mt-3 max-w-xs text-center text-base font-normal leading-relaxed text-text-light/70 dark:text-text-dark/70">Discover genuine connections in three simple steps.</p>
+</div>
+<div class="h-12"></div>
+<div class="px-2 pb-4">
+<button class="flex h-16 w-full cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-primary-light to-primary-dark text-lg font-bold text-white shadow-xl shadow-pink-500/30 transition-transform duration-200 hover:scale-105 active:scale-95">
+<span>Continue</span>
+</button>
+</div>
+</div>
+</div>
+
+</body></html>

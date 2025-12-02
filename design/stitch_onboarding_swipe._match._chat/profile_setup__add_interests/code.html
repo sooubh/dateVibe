@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Setup: Add Interests</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .icon-filled {
+      font-variation-settings:
+      'FILL' 1;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ee2b8c",
+            "background-light": "#f8f6f7",
+            "background-dark": "#221019",
+            "peach": "#FFDAB9",
+            "sky-blue": "#87CEEB",
+            "warm-pink": "#FF85A1",
+            "soft-purple": "#B39DDB",
+            "warm-peach": "#FFC3A0",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gradient-to-b from-peach to-sky-blue dark:bg-gradient-to-b dark:from-background-dark dark:to-[#1a0c14] font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden text-[#333333] dark:text-white/90">
+<!-- Top App Bar & Progress Bar -->
+<header class="sticky top-0 z-10 bg-white/30 backdrop-blur-lg dark:bg-background-dark/30">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start text-[#333333] dark:text-white">
+<span class="material-symbols-outlined text-3xl">chevron_left</span>
+</div>
+<h1 class="text-[#333333] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Select Your Interests</h1>
+<div class="flex size-12 shrink-0 items-center"></div>
+</div>
+<div class="flex flex-col gap-3 px-4 pt-2 pb-4">
+<div class="flex justify-between items-center">
+<p class="text-sm font-normal leading-normal text-[#333333]/80 dark:text-white/70">3 of 5 selected</p>
+<p class="text-[#333333]/80 dark:text-white/70 text-sm font-normal leading-normal">Step 3 of 5</p>
+</div>
+<div class="rounded-full bg-white/40 dark:bg-black/20"><div class="h-1.5 rounded-full bg-gradient-to-r from-warm-pink to-soft-purple" style="width: 60%;"></div></div>
+</div>
+</header>
+<main class="flex-grow px-4 pb-32">
+<!-- Body Text -->
+<p class="text-base font-normal leading-normal pb-3 pt-4 text-center text-[#333333]/90 dark:text-white/80">Choose up to 5. This helps us find your vibe.</p>
+<!-- Search Bar -->
+<div class="py-3">
+<label class="flex flex-col min-w-40 h-14 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full bg-white/40 dark:bg-white/10 backdrop-blur-sm shadow-sm">
+<div class="text-[#333333]/60 dark:text-white/60 flex items-center justify-center pl-5">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-[#333333] dark:text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-[#333333]/60 dark:placeholder:text-white/60 px-4 text-base font-normal leading-normal" placeholder="Search for interests..." value=""/>
+</div>
+</label>
+</div>
+<!-- Category Tabs -->
+<div class="py-3 overflow-x-auto">
+<div class="flex whitespace-nowrap border-b border-white/30 dark:border-white/10 gap-6">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-warm-pink text-warm-pink pb-[13px] pt-2" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Creative</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#333333]/70 dark:text-white/60 pb-[13px] pt-2" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Sports</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#333333]/70 dark:text-white/60 pb-[13px] pt-2" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Foodie</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#333333]/70 dark:text-white/60 pb-[13px] pt-2" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Going Out</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#333333]/70 dark:text-white/60 pb-[13px] pt-2" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Staying In</p>
+</a>
+</div>
+</div>
+<!-- Interest Chips -->
+<div class="flex flex-wrap gap-3 py-4">
+<!-- Selected Chip Example -->
+<button class="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-white bg-gradient-to-r from-warm-pink to-soft-purple shadow-lg transition-transform duration-200 ease-in-out hover:scale-105">
+<span class="material-symbols-outlined icon-filled text-lg">check_circle</span>
+<span class="font-semibold text-sm">Photography</span>
+</button>
+<!-- Default Chip Example -->
+<button class="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[#333333] dark:text-white/90 bg-white/40 dark:bg-white/10 backdrop-blur-sm shadow-sm transition-transform duration-200 ease-in-out hover:scale-105">
+<span class="font-semibold text-sm">Painting</span>
+</button>
+<!-- Selected Chip Example -->
+<button class="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-white bg-gradient-to-r from-warm-pink to-soft-purple shadow-lg transition-transform duration-200 ease-in-out hover:scale-105">
+<span class="material-symbols-outlined icon-filled text-lg">check_circle</span>
+<span class="font-semibold text-sm">Music</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[#333333] dark:text-white/90 bg-white/40 dark:bg-white/10 backdrop-blur-sm shadow-sm transition-transform duration-200 ease-in-out hover:scale-105">
+<span class="font-semibold text-sm">Writing</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[#333333] dark:text-white/90 bg-white/40 dark:bg-white/10 backdrop-blur-sm shadow-sm transition-transform duration-200 ease-in-out hover:scale-105">
+<span class="font-semibold text-sm">Art</span>
+</button>
+<!-- Selected Chip Example -->
+<button class="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-white bg-gradient-to-r from-warm-pink to-soft-purple shadow-lg transition-transform duration-200 ease-in-out hover:scale-105">
+<span class="material-symbols-outlined icon-filled text-lg">check_circle</span>
+<span class="font-semibold text-sm">Design</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[#333333] dark:text-white/90 bg-white/40 dark:bg-white/10 backdrop-blur-sm shadow-sm transition-transform duration-200 ease-in-out hover:scale-105">
+<span class="font-semibold text-sm">Dancing</span>
+</button>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-sky-blue/50 to-transparent dark:from-background-dark/50 dark:to-transparent">
+<button class="w-full h-16 rounded-full bg-gradient-to-r from-warm-pink to-soft-purple text-white flex items-center justify-center gap-3 text-lg font-bold shadow-2xl shadow-warm-pink/40 transition-transform duration-200 ease-in-out hover:scale-105">
+<span>Save Profile</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

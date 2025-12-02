@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DateVibe - No Matches</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings:
+      'FILL' 1
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ee2b8c",
+            "background-light": "#f8f6f7",
+            "background-dark": "#221019",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 pb-2 justify-between fixed top-0 w-full z-10">
+<div class="flex size-12 shrink-0 items-center justify-start text-zinc-900 dark:text-zinc-50">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</div>
+<h2 class="text-zinc-900 dark:text-zinc-50 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Matches</h2>
+</div>
+<!-- Main Content -->
+<div class="flex flex-1 flex-col justify-center items-center px-4 py-6">
+<div class="flex flex-col items-center gap-6">
+<div class="flex items-center justify-center w-full max-w-[300px]">
+<img class="aspect-square object-cover rounded-full w-full max-w-[280px] shadow-lg shadow-primary/20" data-alt="A large, soft pink heart illustration with a subtle glow against a clean background, symbolizing love and connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0pPopF4Gcm9E9naP8wRYJC16ch5RiN-Ajyfiie_tjbrWlOCk9_BLuXf_u-n6HgypW5FBvVAwI_cwJraXJr6mKyB_HyWNoidmKUfInI7H472x79fekYFzbcdZS8I6VIAp_3hP2P0h28Uo1Ks3BkgKVWwKW6DrLnEe-gUUJWlSJf1LVO5VF7HhtvgD_dQuGbgYZ75P8sMR_zqGIpAxbn425zps3dbgNDuYy4i1oB9LRdroO1S5O6oZqFfNHkundBlVPJg9wSlQmbmI"/>
+</div>
+<div class="flex max-w-[480px] flex-col items-center gap-2 pt-4">
+<p class="text-zinc-900 dark:text-zinc-50 text-2xl font-bold leading-tight tracking-[-0.015em] max-w-[480px] text-center">No Matches Yet</p>
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-normal leading-normal max-w-[480px] text-center">Keep swiping to find your vibe!</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 mt-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/30 hover:bg-primary/90 transition-all">
+<span class="truncate">Start Swiping ❤️</span>
+</button>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="flex gap-2 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 pb-3 pt-2 fixed bottom-0 w-full z-10">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500 dark:text-zinc-400" href="#">
+<span class="material-symbols-outlined text-2xl">spark</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Discover</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500 dark:text-zinc-400" href="#">
+<span class="material-symbols-outlined text-2xl">star</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Top Picks</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500 dark:text-zinc-400" href="#">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Likes</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary dark:text-primary" href="#">
+<span class="material-symbols-outlined fill-1 text-2xl">chat_bubble</span>
+<p class="text-xs font-bold leading-normal tracking-[0.015em]">Matches</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500 dark:text-zinc-400" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</div>
+</body></html>

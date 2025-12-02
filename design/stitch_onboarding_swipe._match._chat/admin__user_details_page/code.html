@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin: User Details Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 sticky top-0 z-10 border-b border-white/10">
+<div class="text-white flex size-12 shrink-0 items-center justify-start -ml-2">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-300">arrow_back_ios_new</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">User Details</h2>
+<div class="flex size-12 shrink-0 items-center"></div>
+</div>
+<!-- ProfileHeader -->
+<div class="flex p-4 @container mt-4">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32" data-alt="Profile picture of Jessica Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALgexqxb39cP8iz2sQrs3Z3CKz6Om8fBONiMUoCn4wwB9KPv5T5psuQUjpPABPCBpm6BV-g-oXSZsJYlZMCtC9HofjAsiyb4UJA5_X0glXVQoHLYG8SeROG_QmETQrYOEHDmwy6yolghdWpe8tc_RNzTqVUIWLBiGRv3D8rckRMmSc1MfPevHX77tIsG2ycsV8EQG4yGAyXScuixq0zM8QR6VAzIaRw0-RjgDstmlOTyfe452kHBVjXdNisReqHmjgNxZGH-84b3c");'></div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">Jessica Doe, 25</p>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal text-center">User ID: 123456</p>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal text-center">Joined: Jan 15, 2024</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ButtonGroup -->
+<div class="flex justify-stretch">
+<div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-between">
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-pink-500 text-white text-base font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-xl">toll</span>
+<span class="truncate">Add Coins</span>
+</button>
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-red-500/20 text-red-400 text-base font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-xl">block</span>
+<span class="truncate">Block User</span>
+</button>
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-white/10 text-gray-400 dark:text-white text-base font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-xl">flag</span>
+<span class="truncate">View Reports</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col px-4 gap-4 mt-4">
+<!-- Bio Section -->
+<div class="flex flex-col p-4 bg-white/5 dark:bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-2">Bio</h3>
+<p class="text-gray-600 dark:text-gray-300 text-base font-normal leading-normal">Lover of art, hiking, and deep conversations. Looking for someone to share new experiences with. Let's explore the city's hidden gems together!</p>
+</div>
+<!-- Interests Section -->
+<div class="flex flex-col p-4 bg-white/5 dark:bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Interests</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 text-sm font-medium rounded-full bg-purple-500/20 text-purple-300">Hiking</span>
+<span class="px-3 py-1.5 text-sm font-medium rounded-full bg-pink-500/20 text-pink-300">Art</span>
+<span class="px-3 py-1.5 text-sm font-medium rounded-full bg-sky-500/20 text-sky-300">Movies</span>
+<span class="px-3 py-1.5 text-sm font-medium rounded-full bg-purple-500/20 text-purple-300">Photography</span>
+<span class="px-3 py-1.5 text-sm font-medium rounded-full bg-pink-500/20 text-pink-300">Cooking</span>
+<span class="px-3 py-1.5 text-sm font-medium rounded-full bg-sky-500/20 text-sky-300">Travel</span>
+</div>
+</div>
+<!-- Account Details Section -->
+<div class="flex flex-col p-4 bg-white/5 dark:bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl mb-8">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Account Details</h3>
+<div class="flex flex-col divide-y divide-white/10">
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-500 dark:text-gray-400">Email Address</span>
+<span class="text-gray-800 dark:text-gray-200 font-medium">j.doe@example.com</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-500 dark:text-gray-400">Account Status</span>
+<span class="inline-flex items-center rounded-full bg-green-500/20 px-2 py-1 text-xs font-medium text-green-400">Active</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-500 dark:text-gray-400">Coin Balance</span>
+<span class="text-gray-800 dark:text-gray-200 font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-yellow-400 text-base">toll</span>
+                            1,250
+                        </span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-500 dark:text-gray-400">Subscription Tier</span>
+<span class="text-gray-800 dark:text-gray-200 font-medium">Premium Plus</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

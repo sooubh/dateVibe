@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DateVibe - Home Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ee2b8c",
+            "background-light": "#f8f6f7",
+            "background-dark": "#221019",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between shrink-0">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<button class="flex items-center justify-center p-2 rounded-full">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="User profile picture of a woman with curly brown hair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5qpZsFfc3XAJAv2ASDTFcQf_HvhJAVOE2hdmhU4Kc5YCfctDcewa4D5CwsgkehbUK8Fb1gNetb0aO3zRQ0s1F5G-95irX8B86dL1HXz4HHX2pmzEhU67HC01DaqGQgfoJUR2XM1ZuFpTVxRgy5WETKGetTvaqpcUwtbazf8sQ3RaYXuQ-wXwQ4ajirgoE4ewN4bLx-Vvx6VQRBqa_mhp9M7p75BGRWRXvLrFj-_FL_e1QV6UmIp94-r1yLeEgfcZ2AavVZ5eVJXs");'></div>
+</button>
+</div>
+<h2 class="text-[#1b0d14] dark:text-gray-200 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">DateVibe</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-[#1b0d14] dark:text-gray-200 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</button>
+</div>
+</div>
+<!-- Main Content: Card Stack -->
+<div class="flex flex-1 flex-col items-center justify-center px-4 py-2">
+<div class="relative w-full max-w-sm aspect-[3/4]">
+<!-- Background Card 2 -->
+<div class="absolute inset-0 bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_15px_rgba(0,0,0,0.2)] transform scale-90 -translate-y-6" data-alt="A photo of a person smiling in a sunlit park." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxT06skvn1FGRtkDHBc0I7R2QJfaawCieZ7q0qcjDjyuUiJQPSan8q8QjGiLrVgABIV7hheX8PTe47wk1wFJw0avol80-tRKavFXOJMcUiC9Yr95fAbXVEWxNrOBRN9Q1PvAvnM1vu5iNMjco2vqVSEYWc_c-ZlrKFV-ILQl-BxE5ifR5tpY04I_Vc_2YHqfsY3KFILZPiSflbtlHgAn1a6FxnsPuT0QFYiE6KhvEp3rV24V3WclpNTE92GuOS1t3isVzZnRtQe_g");'>
+</div>
+<!-- Background Card 1 -->
+<div class="absolute inset-0 bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_15px_rgba(0,0,0,0.3)] transform scale-95 -translate-y-3" data-alt="A portrait of a man in a cityscape at dusk." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCl3ZWkNjw6t8fywh4MQadpPs055VS_fuPf_Kr4ZJNBivl8ADQM3ACKf4eRRvZyNXIPbxVVNEI8nqwma-3HGyK9q6aIoJTCWUHQ6N2s7pOeo4121JNGhEOo_6PyexdeKpR3fwXFQTPFPUHqm8C_34349clTdJgynWrhFOOCpFJlrvEH-4InN12u9prHmleK0UPTjhKHcslrcnC7WPmemAcwxf6vezYSEznkfnJkE6GeWkj8r9QvmtIWCP-x8m06obcNXcCxk8TkT2o");'>
+</div>
+<!-- Foreground Card -->
+<div class="absolute inset-0 bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.15)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)]" data-alt="A portrait of a woman laughing outdoors." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB18bVsatgqgjqt98qWG-eWiBjkhtp7Ds6y8IyKMHl-UzSKOI_QJw1ht35DViXC1LLGLsj5riKQScK5WoCXvgq-42LBh6iH_P6DtcONyN5O7Wa23tuNX0JGgOlDcLuoOku0dfiA7Y05-uatODYmHo2hQXZ4NRc000MW8-3WTEk6nj9LuImvj1Qe99BGyFv2MxxXsvKlGtYx4I57YTB7z6oQxSbEvpAK1KMO5QDyN0gLqIl8N8Kf8JhHnQ-drhQz4bGWhblhG-a6sfQ");'>
+<div class="flex w-full flex-col gap-4 p-4">
+<div class="flex max-w-[440px] flex-1 flex-col gap-1.5">
+<p class="text-white tracking-light text-2xl font-bold leading-tight">Jessica, 24</p>
+<p class="text-white/90 text-sm font-medium leading-normal">Lover of coffee and spontaneous adventures. Let's explore the city together!</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-white text-base">location_on</span>
+<p class="text-white text-sm font-normal leading-normal">5 miles away</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Button Group -->
+<div class="flex justify-stretch shrink-0">
+<div class="flex flex-1 gap-4 flex-wrap px-4 py-5 justify-between">
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-5 bg-white/80 dark:bg-white/10 text-rose-500 text-base font-bold leading-normal tracking-[0.015em] shadow-md dark:shadow-2xl">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

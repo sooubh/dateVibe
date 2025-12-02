@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Setup: Add Bio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glassmorphism {
+            background: rgba(45, 25, 38, 0.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neomorphic-button {
+             background: linear-gradient(145deg, #ff72c0, #e660a1);
+             box-shadow: 6px 6px 12px #d95a96, -6px -6px 12px #ff78d0;
+        }
+        .dark .neomorphic-button {
+            background: linear-gradient(145deg, #d95a96, #ff72c0);
+            box-shadow: 6px 6px 12px #ba4e82, -6px -6px 12px #ff84da;
+        }
+        .neomorphic-button:active {
+            background: #e660a1;
+            box-shadow: inset 6px 6px 12px #d95a96, inset -6px -6px 12px #ff78d0;
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b8c",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+              "peach": "#FFDAB9",
+              "pink-soft": "#FFC0CB",
+              "pink-vibrant": "#FF69B4",
+              "purple-soft": "#BA55D3",
+              "text-light": "#333333",
+              "text-dark": "#F5E9EF",
+              "text-secondary-light": "#6b6b6b",
+              "text-secondary-dark": "#b0a0a8"
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-gradient-to-b from-peach to-pink-soft dark:from-[#44222a] dark:to-[#3a1d30] group/design-root overflow-x-hidden">
+<div class="flex flex-col flex-1 h-full">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-center text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios_new</span>
+</div>
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Step 3 of 5</h2>
+<div class="size-12 shrink-0"></div> <!-- Spacer -->
+</div>
+<!-- Main Content -->
+<div class="flex-1 px-4 py-6 flex flex-col">
+<h1 class="text-text-light dark:text-text-dark tracking-tight text-[32px] font-bold leading-tight text-left pb-6">Tell us about yourself...</h1>
+<div class="flex flex-col min-w-40 flex-1">
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg glassmorphism text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-pink-vibrant border-none min-h-36 placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark p-4 text-base font-normal leading-normal transition-shadow duration-300 shadow-sm focus:shadow-lg" placeholder="Your bio goes here..."></textarea>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal self-end pt-2 pr-1">0/500</p>
+</div>
+</div>
+<!-- Action Button -->
+<div class="flex px-4 py-8 mt-auto">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 flex-1 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-200 neomorphic-button">
+<span class="truncate">Next</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

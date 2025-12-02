@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DateVibe - No Profiles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b8c",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      .material-symbols-outlined.fill {
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
+<!-- Background Gradient -->
+<div class="absolute inset-0 z-0 bg-gradient-to-br from-[#FFDDE1] via-[#EED5FF] to-[#DCE7FF] dark:from-[#3a1d2e] dark:via-[#2b1f42] dark:to-[#1e2a4a] opacity-60 dark:opacity-40"></div>
+<!-- Main Content Wrapper -->
+<div class="relative z-10 flex flex-1 flex-col">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between bg-transparent">
+<div class="text-zinc-900 dark:text-zinc-200 flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined">filter_list</span>
+</div>
+<h2 class="text-zinc-900 dark:text-zinc-200 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">DateVibe</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-zinc-900 dark:text-zinc-200 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+<!-- Empty State Content -->
+<div class="flex flex-1 flex-col items-center justify-center px-4 py-6">
+<div class="flex flex-col items-center gap-8 w-full max-w-sm">
+<img class="w-64 h-64 text-primary" data-alt="Stylized illustration of a heart with stars and clouds, representing hope and connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpbmpDKiaygspGQ0lsmqimWePlw7_xuB5K_SgzGpHlatQ8hi1RQgir_-KceA4OVec8Plapsc-79AChZVQnzaV8PGQX6ZHqtx_mp4PHhbPisRV-Ivx7uuDyKJxgrcMiHzCxW3x6IGjEqdcIeupHDXgtnIqv629TzJVuFMm3xkMhFtBs9_VHGKLN3AC2IEHeuL3JFCCWVvXVcCV25SmxYersVAThOEsRutNDz8FZVeUbzvKrW6mxRmWXLdgyXYE_DhKJ6s-rDkNEcG0"/>
+<!-- Glassmorphic Text Card -->
+<div class="flex w-full max-w-md flex-col items-center gap-4 rounded-xl p-6 bg-white/30 dark:bg-black/20 backdrop-blur-lg border border-white/40 dark:border-white/10 shadow-lg dark:shadow-black/20">
+<p class="text-zinc-800 dark:text-white text-xl font-bold leading-tight tracking-tight text-center">No new profiles right now</p>
+<p class="text-zinc-600 dark:text-zinc-300 text-base font-normal leading-normal text-center">Check back later! New people are coming soon.</p>
+<button class="flex mt-4 min-w-[84px] w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-md hover:shadow-lg transition-shadow">
+<span class="truncate">Adjust My Filters</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="relative z-20 flex gap-2 border-t border-zinc-900/10 dark:border-zinc-200/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pb-3 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined fill">spark</span>
+</div>
+<p class="text-primary text-xs font-bold leading-normal tracking-[0.015em]">Discover</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500 dark:text-zinc-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<p class="text-zinc-500 dark:text-zinc-400 text-xs font-medium leading-normal tracking-[0.015em]">Likes</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500 dark:text-zinc-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<p class="text-zinc-500 dark:text-zinc-400 text-xs font-medium leading-normal tracking-[0.015em]">Matches</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500 dark:text-zinc-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-zinc-500 dark:text-zinc-400 text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .text-shadow {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ee2b8c",
+            "background-light": "#f8f6f7",
+            "background-dark": "#221019",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-gradient-to-b from-[#FFDAB9] to-[#E6E6FA] group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="fixed top-0 left-0 right-0 z-10 flex h-20 items-center justify-between bg-transparent p-4 text-white">
+<button class="flex size-12 items-center justify-center rounded-full bg-black/20 backdrop-blur-sm">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full bg-black/20 backdrop-blur-sm">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex-grow">
+<!-- Header Image -->
+<div class="relative @container">
+<div class="bg-cover bg-center flex h-[60vh] flex-col justify-end overflow-hidden" data-alt="A portrait of a smiling woman outdoors on a sunny day" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBxlLy3FY42641rvhJeA9fzBCwyf-i0zJdSry-Xj6hes5_WlagerWtKCXE8Mtb-YQvl8mo-CL8gzE8BLeVicCedEw-1wXlFWqsT6o-X1PV9e7yS5fYJ-ekjxLnrtjjwdhzdQ8x5pJZHZVylJNRfUyE3Kj_29wMxHnclhrGh-HeDDDjMl9qYoKfTiAlf-Ez2Cbj5iidy-2R4JO6M43WKOitmdMT4JUrdLH_VHZfWePgs58fJXKNeTDk2oiGFFOR4g0ToaI3nDU6KRhA");'>
+<div class="p-5 flex justify-center gap-2">
+<div class="h-1.5 w-6 rounded-full bg-white"></div>
+<div class="h-1.5 w-6 rounded-full bg-white/50"></div>
+<div class="h-1.5 w-6 rounded-full bg-white/50"></div>
+<div class="h-1.5 w-6 rounded-full bg-white/50"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Glassmorphism Content Card -->
+<div class="relative -mt-24 rounded-t-xl bg-white/60 p-4 pb-24 backdrop-blur-xl dark:bg-black/40">
+<div class="mx-auto h-1.5 w-10 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+<!-- Headline Text -->
+<h1 class="text-[#1b0d14] dark:text-white tracking-tight text-[32px] font-bold leading-tight pt-6 pb-2 text-left">Sarah, 26</h1>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-base">location_on</span>
+<p class="font-medium">New York, NY</p>
+</div>
+<!-- Section: About me -->
+<h3 class="text-[#1b0d14] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pt-6 pb-2">About me</h3>
+<p class="text-gray-700 dark:text-gray-200 leading-relaxed">Lover of sunny days, spontaneous road trips, and finding the best pizza in the city. Always down for an adventure or a cozy night in with a good movie. Looking for someone to share laughs and create memories with. 🎨🎬✈️</p>
+<!-- Section: Interests -->
+<h3 class="text-[#1b0d14] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pt-6 pb-3">Interests</h3>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-3 py-1.5 text-sm font-semibold text-primary">
+<span class="material-symbols-outlined text-base">hiking</span>
+<span>Hiking</span>
+</div>
+<div class="flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-3 py-1.5 text-sm font-semibold text-primary">
+<span class="material-symbols-outlined text-base">theaters</span>
+<span>Movies</span>
+</div>
+<div class="flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-3 py-1.5 text-sm font-semibold text-primary">
+<span class="material-symbols-outlined text-base">brush</span>
+<span>Art</span>
+</div>
+<div class="flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-3 py-1.5 text-sm font-semibold text-primary">
+<span class="material-symbols-outlined text-base">self_improvement</span>
+<span>Yoga</span>
+</div>
+<div class="flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-3 py-1.5 text-sm font-semibold text-primary">
+<span class="material-symbols-outlined text-base">music_note</span>
+<span>Concerts</span>
+</div>
+</div>
+<!-- Section: Basic Details -->
+<h3 class="text-[#1b0d14] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pt-6 pb-3">Basic Details</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="rounded-lg bg-gray-100 p-3 dark:bg-white/10">
+<p class="text-xs text-gray-500 dark:text-gray-400">Height</p>
+<p class="font-semibold text-gray-800 dark:text-white">5'7"</p>
+</div>
+<div class="rounded-lg bg-gray-100 p-3 dark:bg-white/10">
+<p class="text-xs text-gray-500 dark:text-gray-400">Job Title</p>
+<p class="font-semibold text-gray-800 dark:text-white">Graphic Designer</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-8 space-y-4 border-t border-gray-200 pt-6 dark:border-gray-700">
+<button class="flex w-full items-center justify-center gap-3 rounded-full bg-transparent px-6 py-3.5 text-sm font-bold text-gray-700 ring-1 ring-inset ring-gray-300 dark:text-gray-200 dark:ring-gray-600">
+<span class="material-symbols-outlined text-xl">block</span>
+          Block Sarah
+        </button>
+<button class="flex w-full items-center justify-center gap-3 rounded-full bg-transparent px-6 py-3.5 text-sm font-bold text-red-500 ring-1 ring-inset ring-red-400">
+<span class="material-symbols-outlined text-xl">flag</span>
+          Report Sarah
+        </button>
+</div>
+</div>
+</div>
+</body></html>

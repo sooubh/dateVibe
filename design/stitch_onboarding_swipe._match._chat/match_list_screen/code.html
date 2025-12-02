@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Match List Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b8c",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        font-size: 24px;
+      }
+      .gradient-bg {
+        background-image: linear-gradient(170deg, #FFDAB9, #FFC0CB, #D8BFD8);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="fixed top-0 left-0 right-0 h-full w-full gradient-bg -z-10"></div>
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 bg-white/70 dark:bg-black/50 backdrop-blur-lg">
+<div class="flex items-center p-4 pb-3 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<!-- Placeholder for potential back button or logo -->
+</div>
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Matches</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-slate-900 dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-col gap-4">
+<!-- New Matches Section Header -->
+<h2 class="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pt-5">New Matches</h2>
+<!-- Story Carousel for New Matches -->
+<div class="flex w-full overflow-hidden pl-4 py-2">
+<div class="flex min-h-min flex-row items-start justify-start gap-4">
+<div class="flex flex-1 flex-col justify-center gap-2 w-20 text-center">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full p-1 bg-gradient-to-br from-primary to-orange-400">
+<div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-2 border-white dark:border-background-dark" data-alt="Profile picture of Chloe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjiDAKYE107DNDVDnjdnghPVCwECTRLWsrZq5hg9iCvX6TdZVvVnojJnCKUBPOMOy-8amqPtrGRhtx0BXvYDVbOiqHndy8xEPeketjDp5LTSljieDhVs3NQe90TXvJ2LGflrLIUhQpDuT2IYCIO3lN0OPkGDroC3eSsCw1-1VAdUxqJrWazikUqrgeqzWbs5zLoC3KgZxnPEtyW0UaxoqdWiMa3MRgqA7eM45fkZCuYZM-LtCd0hpfsQF5TaURjhJqBRSkiEonK2Y");'></div>
+</div>
+</div>
+<p class="text-slate-800 dark:text-gray-300 text-[13px] font-medium leading-normal">Chloe</p>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-2 w-20 text-center">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full p-1 bg-gradient-to-br from-primary to-orange-400">
+<div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-2 border-white dark:border-background-dark" data-alt="Profile picture of Liam" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2Z0YFw75X0Js6dvOzxc2WUxiL47RELhUabQLTvv3tVHIe5tNVDQHZLDA8W4p_1DEqrIKRprzdtON1HZuwZL31FEXI2Do3Gzwxb1vvwo2iJrEBi6OrZnkPR1Q1DP1JanERGGD_iVAO1I0YUMVU9PoZjbmzu_GVig8AwwdNiDGmuWom0NJ0yPh2actP_TgSJFkLUx-loJ4INkconICkgoYXUFlYQ5voQ5oAnC9hWIf98Yl3wZ2gQlIQjPLKXwhFpW4prlfJ9QZ--pw");'></div>
+</div>
+</div>
+<p class="text-slate-800 dark:text-gray-300 text-[13px] font-medium leading-normal">Liam</p>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-2 w-20 text-center">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full p-1 bg-gradient-to-br from-primary to-orange-400">
+<div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-2 border-white dark:border-background-dark" data-alt="Profile picture of Jordan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQUnGRvVi_1aqiz1uj-tW1mfGmS5tfErjVvwv_CvGTSH5ZuVG-7Kanwuh4j6P9IdQtGPGyse58qUkdPeW8bFlZcEJpfReUSliFX0Gdhqy2RZEw0sF3myOZpgWNfVc_6D-sGnvRaxlwUabg246J80NEc5EAzXwihzUfSVudxWljeYChgX7osp9ehWE8Tslf6CM5LpNQ4LLwlrKxz2fgU39bfuBgrNEaoG8Z6RLJC0MpmHq9vL5wouT8fK4xShuKJyVINJK56yIDs7Q");'></div>
+</div>
+</div>
+<p class="text-slate-800 dark:text-gray-300 text-[13px] font-medium leading-normal">Jordan</p>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-2 w-20 text-center">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full p-1 bg-gradient-to-br from-primary to-orange-400">
+<div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-2 border-white dark:border-background-dark" data-alt="Profile picture of Sophie" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmp2XWin0-_EhWxPsjbVSXqsLywaMHHRlopSm28pFC_Oef8PFGL7TDYnEfsbHEkEnND_QqMV2xQdyQ4Z0A36DaTmlFWnSx0d0x2wCcJhAEyS4OwXZ01k2eQvEbK_YzwkRyXF7CYIEqslOgVpARM118Se76Qcw747dHV7Sc0EwDDdCn0srisAkMAuD-w2QkqaTIBbnkk9nPVWKI4MTeDC9PjaWAGlRVia6JceMEWzJtoeLDKbsp3nWIF0KF7pRC6XizKa6aBSMMcJ4");'></div>
+</div>
+</div>
+<p class="text-slate-800 dark:text-gray-300 text-[13px] font-medium leading-normal">Sophie</p>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-2 w-20 text-center">
+<div class="relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full p-1 bg-gradient-to-br from-primary to-orange-400">
+<div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-2 border-white dark:border-background-dark" data-alt="Profile picture of Marco" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGzLvNTDuLCD960OYg1246UiHkzXOgso-bvLmbSLBua2zlr7LSZbp6MoOFjVd6JGn7FlctZWCRM2CkUmWxM3e1aKU0n73PvR6YYo-ggAxcJfFmpGMqRIVFIDkMWo3qBCf6KMb6FVANvg1Lg84P-C_tmnRmUtVRlIxWjKb2kQMx5_FdwogseYvd-jh7_Picn6-TlFEdpOwI6ktEyp-QjesFhzOy5kZXxUONFRmWNS-GeLQrUlC5xuDabFSak-9jtJPmhwPOUdXzZIU");'></div>
+</div>
+</div>
+<p class="text-slate-800 dark:text-gray-300 text-[13px] font-medium leading-normal">Marco</p>
+</div>
+</div>
+</div>
+<!-- Messages Section -->
+<div class="flex flex-col bg-white/90 dark:bg-black/60 backdrop-blur-xl rounded-t-xl pb-4">
+<!-- Messages Section Header -->
+<h2 class="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Messages</h2>
+<!-- List Item 1 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Jessica" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4iN2QLeIE3PrKtwbg6ir3ovF55b9AwIKiFWWoAB6FwYehCKcjgB7AyNxrL4Wa5mOYEkOIO8qDzt5YY4F2402XmuaY6cwANa9lObOfWQhwtu_8QxwMQynsq025Wdj3sv1urNsEGfePEK3APOwxbpSMrtWSy1F6-5EyQN-Pe5cenPknkL70VsBYimL0wTgCBNq5zIzNdF1e_Ql96hddCfFQvJ3fxehKs2buFfvqMg3x84dwZmpUA4mWjUnld6R9ngpJLb5hZjO3ox4");'></div>
+<div class="absolute bottom-0 right-0 h-4 w-4 bg-green-500 rounded-full border-2 border-white dark:border-background-dark/80"></div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1">Jessica</p>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">Sounds like a plan! Can't wait.</p>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-1">
+<p class="text-slate-400 dark:text-gray-500 text-xs font-normal leading-normal">9:41 PM</p>
+<div class="h-5 w-5 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold">2</div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGy5_ScTIRW3wLUgJ8C46iNRekcMA6GQNXaW0xcs27TdsuS2BzfhsYItIgvnHvLdRLI_mgvVhUAlZmp7USd9iqvoqAJ-FIRCmQJJbTBnbsitDLbo8odb4UmTL6ResJfLzPUEp9PrH8Carg3mVKiPnDc9Jz_Oth4k5-L9SKUqowV8QtJDeojG_-usKXq_xlWqFHfK70R_jOj5-t-C0DaQEU4c1OoQgi4XhOFPuapBXTiGeb8f88efIJKwIIPANTr8fpJhpC66U07bE");'></div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1">Alex</p>
+<p class="text-primary dark:text-pink-400 text-sm font-medium leading-normal line-clamp-1">You sent a photo 📷</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-slate-400 dark:text-gray-500 text-xs font-normal leading-normal">Yesterday</p></div>
+</div>
+<!-- List Item 3 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Maya" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrvv0pWzwcZO4E7xYzfkf1obRiCuraifE2-4mQGlmUXQb-DoTqiFQllvWEClxvR9m6eTKPg_VJcHnrB2RBp381fsTf7IJ7Ei6OZx0mxXsaEnXRf3W2un33H1p2lMCR9y2mE4E1SPRHJWdbXAs5iOp_n5rKqCYPpisMo3_bOywr_2UosfTyMYub9tEQdzo7gqfK5ev2Gb9TB0EauZhf4WiVjLaJYmEGgiuijRVgzz76PGP93OrT5DrmHX6D8AGfiKiG3UfFiOElc2Y");'></div>
+<div class="absolute bottom-0 right-0 h-4 w-4 bg-green-500 rounded-full border-2 border-white dark:border-background-dark/80"></div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1">Maya</p>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">Haha that's hilarious! 😂</p>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-1">
+<p class="text-slate-400 dark:text-gray-500 text-xs font-normal leading-normal">8:15 PM</p>
+<div class="h-2 w-2 rounded-full bg-primary/30 dark:bg-primary/50"></div>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of David" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBxs0QwYFCvCuCsKLj3yI6i4rxYd1jOf6KrHclS0nEsfGH5S4c6kxbSUUhWpGSGz-YaGcGvPitjHYzkem1PNjbHCBTpu9taXueJLRGT0XwDCwtYHLTuMrhUQc4fzxLHilpvuStC3hQ6Lx9l7cMPDrQCG6bFrjni434c5iXnkqO-4Gtx6HkpWRfjwk7z-4zrAzoTUFdmpl1SFyx3GcS59kSJrr5kLHjPgoiD5QgimqWUqRQ2zX7VQ-zzaQQLl0jSn9ygdTmvZ4lLe7c");'></div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1">David</p>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">How's your week going?</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-slate-400 dark:text-gray-500 text-xs font-normal leading-normal">Mon</p></div>
+</div>
+<!-- List Item 5 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Emily" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDs9vejh3CLU7CqeEExsobAkYpg8R0U1CJpGLYL_W-HoOsjrVH_UvC-rU6Sg3Al1Dpnaes8ebMdGUuMUT4tKd8OJc1tzhTVJAb15fOylU25sWknqC0aT5Zow0a760QQSwCGqEo_uNW3U6Av7Yd4l1ASULrEEWEghHTQJxVdKJvCELQLP_ll_Fv43ksl6nrAVw5OEQdM7ZZMyl_RBrD-EbXC6HQZw8jgrJ1pkoOfqTSxaU98LFCUZJG6MU2i2vqdP652FRWNlSseKl0");'></div>
+<div class="absolute bottom-0 right-0 h-4 w-4 bg-green-500 rounded-full border-2 border-white dark:border-background-dark/80"></div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal line-clamp-1">Emily</p>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">Hey! I had a great time last night.</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-slate-400 dark:text-gray-500 text-xs font-normal leading-normal">Sun</p></div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="sticky bottom-0 bg-white/70 dark:bg-black/50 backdrop-blur-lg border-t border-gray-200/50 dark:border-gray-800/50">
+<div class="flex justify-around items-center h-20">
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-xs font-medium">Discover</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-medium">Matches</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-xs font-medium">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

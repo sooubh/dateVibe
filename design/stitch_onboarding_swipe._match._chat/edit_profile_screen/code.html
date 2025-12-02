@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DateVibe - Edit Profile</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#ee2b8c",
+                    "background-light": "#f8f6f7",
+                    "background-dark": "#221019",
+                    "peach": "#FFDAB9",
+                    "lavender": "#E6E6FA"
+                },
+                fontFamily: {
+                    "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "1rem",
+                    "lg": "1.5rem",
+                    "xl": "2rem",
+                    "full": "9999px"
+                },
+            },
+        },
+    }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            @apply font-display bg-gradient-to-b from-peach to-lavender min-h-screen;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neomorphic-inset {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.7);
+        }
+        .glassmorphic {
+             background-color: rgba(255, 255, 255, 0.5);
+             backdrop-filter: blur(12px);
+             -webkit-backdrop-filter: blur(12px);
+             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glassmorphic {
+             background-color: rgba(34, 16, 25, 0.5);
+             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col font-display group/design-root overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-black/5 dark:border-white/5">
+<div class="text-[#1b0d14] dark:text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#1b0d14] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Edit Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<p class="text-primary text-base font-bold leading-normal tracking-[0.015em] shrink-0">Save</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 p-4 pb-24">
+<!-- My Photos Section -->
+<div>
+<h2 class="text-[#1b0d14] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-1 pt-2">My Photos</h2>
+<p class="text-[#1b0d14]/70 dark:text-white/70 text-base font-normal leading-normal pb-3">Add at least 2 photos. Hold and drag to reorder.</p>
+<div class="grid grid-cols-3 gap-3">
+<div class="relative col-span-2 row-span-2 group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg" data-alt="A portrait of a smiling person with a blurred city background at dusk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIvrFhYPfmlY_M6SXJZN2Fktu03WOH0SzPFz8u9SprkjL5MXF87XYRLuIJAvEaOHhfd7WjUJLUPoZPUKAl6pdFFcO-CDLHbWT0LQay2jm9r8YmZG-VoWbT_KdLRTAGb71gLK_VHl5a-aWN5PIar-QS_ZFedna5XBfQLIxj45aDFe-cZVNVzuDQi1l9Nq8b_mZaozjBykkbYsUVdeLl9L2CmXCBOB26uwr_HuggJmyxjoC_uEJh_n5LJkS1rYVyS9EJPzidDoZaKqY");'></div>
+<div class="absolute bottom-2 right-2 flex size-8 items-center justify-center rounded-full bg-white/80 dark:bg-black/60 text-primary">
+<span class="material-symbols-outlined text-lg">edit</span>
+</div>
+</div>
+<div class="relative group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg" data-alt="A person laughing candidly while holding a coffee cup outdoors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOjXGz_6B9-JV5fImAdE1LWjIQRY3-0uJSjFTfHyd_OxnpmKeuNTyvNL4Ixh4ol71MSR80KJkvbM3zqNvIqdk-74huSaauoA3iqPcaqE9llkGs-ykHSPkK8qW-6B4gxPF4IA3DQMuUr7aVUaA_Ym-scoxNwnS0QOA7axdbr5FLb5M3I_rdbgAkHM4qN6Ic4JfIG5E0bj2ZPqNCfnK5V_1RKlZnhPyuwcds_uIflkqKFAP0TaoMOkyt-oC6N4-omag5JW49tN_Dq-k");'></div>
+<div class="absolute bottom-1 right-1 flex size-6 items-center justify-center rounded-full bg-white/80 dark:bg-black/60 text-primary">
+<span class="material-symbols-outlined text-base">close</span>
+</div>
+</div>
+<div class="relative group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg" data-alt="A person hiking on a mountain trail with a scenic view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUWXp5_4P5jCQPPY7Oh1NKdNu8gAGPdEp7ZUPyQtLaJBl2-ZzWA3DX-W0f7g8-RNYZrNuqfGKbyrtjsWcXmqFwaUIkYT8-wYICxytdMWSmAElb6eQecAStBpxHmmuH9DeQs4oLepdlgtJpUJjBtTdb3l5T5uX5xoUTUELBMn1Zp1QV8U8AmYEpRoZUniKQ4ioa0uucmerJgiQF3l9mK6P45EfxFAL5P2vPxQ6bhaiG_lG5jlzXTuJbSdlBBraFBtjKjyVAYPBEUc4");'></div>
+<div class="absolute bottom-1 right-1 flex size-6 items-center justify-center rounded-full bg-white/80 dark:bg-black/60 text-primary">
+<span class="material-symbols-outlined text-base">close</span>
+</div>
+</div>
+<div class="relative group flex items-center justify-center bg-background-light/50 dark:bg-background-dark/50 border-2 border-dashed border-primary/40 rounded-lg aspect-square">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-lg">add</span>
+</div>
+</div>
+<div class="relative group flex items-center justify-center bg-background-light/50 dark:bg-background-dark/50 border-2 border-dashed border-primary/40 rounded-lg aspect-square">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-lg">add</span>
+</div>
+</div>
+<div class="relative group flex items-center justify-center bg-background-light/50 dark:bg-background-dark/50 border-2 border-dashed border-primary/40 rounded-lg aspect-square">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-lg">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- About Me Section -->
+<div class="flex flex-col gap-4 rounded-lg p-4 glassmorphic">
+<h2 class="text-[#1b0d14] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">About Me</h2>
+<div class="relative">
+<textarea class="neomorphic-inset w-full appearance-none rounded-lg border-none bg-black/5 dark:bg-white/5 p-4 text-[#1b0d14] dark:text-white placeholder:text-[#1b0d14]/40 dark:placeholder:text-white/40 focus:ring-2 focus:ring-primary/50" placeholder="Tell us a little about yourself..." rows="5">Lover of dogs, hiking, and finding the best slice of pizza. Looking for someone to join my adventures.</textarea>
+<p class="absolute bottom-3 right-4 text-xs text-[#1b0d14]/50 dark:text-white/50">118/300</p>
+</div>
+</div>
+<!-- My Basics Section -->
+<div class="flex flex-col gap-1 rounded-lg p-4 glassmorphic">
+<h2 class="text-[#1b0d14] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-3">My Basics</h2>
+<div class="flex items-center justify-between py-3 border-b border-black/10 dark:border-white/10">
+<span class="text-base text-[#1b0d14] dark:text-white">Gender</span>
+<div class="flex items-center gap-2 text-[#1b0d14]/60 dark:text-white/60">
+<span>Woman</span>
+<span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-3">
+<span class="text-base text-[#1b0d14] dark:text-white">Age</span>
+<div class="flex items-center gap-2 text-[#1b0d14]/60 dark:text-white/60">
+<span>26</span>
+<span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<button class="fixed bottom-6 right-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-3xl">check</span>
+</button>
+</div>
+</body></html>

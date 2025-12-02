@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DateVibe - Loading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b8c",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-pink-200 via-purple-100 to-rose-100 dark:from-pink-900/50 dark:via-purple-900/50 dark:to-rose-900/50 group/design-root">
+<!-- Main content container -->
+<div class="flex flex-col items-center justify-center gap-6 text-center">
+<!-- Central Logo Element -->
+<div class="flex h-24 w-24 items-center justify-center rounded-xl bg-white/50 p-4 shadow-lg backdrop-blur-md dark:bg-white/10">
+<span class="material-symbols-outlined text-6xl text-primary animate-pulse-slow" data-icon="favorite">favorite</span>
+</div>
+<!-- App Title -->
+<h1 class="text-[#1b0d14] dark:text-white tracking-tight text-[40px] font-bold leading-tight">DateVibe</h1>
+</div>
+<!-- Progress Bar at the bottom -->
+<div class="absolute bottom-10 left-4 right-4 flex flex-col gap-3">
+<div class="w-full rounded-full bg-primary/20 dark:bg-primary/30">
+<div class="h-1.5 rounded-full bg-primary" style="width: 30%;"></div>
+</div>
+</div>
+</div>
+</body></html>

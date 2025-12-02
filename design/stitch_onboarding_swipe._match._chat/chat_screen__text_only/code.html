@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chat Screen: Text Only</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b8c",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative mx-auto flex h-screen w-full max-w-md flex-col overflow-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center gap-2 border-b border-black/10 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 p-4 pb-3 backdrop-blur-md">
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-zinc-900 dark:text-zinc-100">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<div class="relative">
+<div class="h-10 w-10 shrink-0 rounded-full bg-cover bg-center" data-alt="Profile picture of Elara" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgOaMC0J51PodA57Ck8TGCI13aQJ9_0g-kDG4yIoHbKnGwOZ8uxBZFAuwNnnsBEDvcQ5EBqU7XlhQ4Dl65k2pWEfprnyzaaYRis6reCH6ASFIuOeeHvXIv5Q_Ue3v_jY77TsXJ4ZhvwWhYPb61BUggA7quhubqExsBBR-jo0gExBoRtLO2lFRW5dWXwkSpstytEaFCvhYziW5quzWAadHFgm-cxg2YE1m-T9PUn-6xe6jdTXCaR0oXFS1Nkf3GqbVQuEE2zTAYcjg");'></div>
+<div class="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-background-light dark:border-background-dark bg-green-500"></div>
+</div>
+<div class="flex-1 pl-2">
+<h2 class="font-bold leading-tight tracking-tight text-zinc-900 dark:text-zinc-100">Elara</h2>
+<p class="text-xs text-green-500">Online</p>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-zinc-900 dark:text-zinc-100">
+<span class="material-symbols-outlined text-2xl">more_vert</span>
+</button>
+</div>
+<!-- Chat Area -->
+<div class="flex flex-1 flex-col justify-end overflow-y-auto px-4 pt-4">
+<div class="flex flex-1 flex-col items-center justify-center">
+<p class="text-base font-normal leading-normal text-zinc-500 dark:text-zinc-400">Say Hi 👋</p>
+</div>
+</div>
+<!-- Composer -->
+<div class="flex flex-col">
+<div class="flex items-end gap-3 px-4 py-3">
+<div class="flex h-12 flex-1 items-stretch rounded-full bg-white/50 dark:bg-black/20 shadow-sm backdrop-blur-lg">
+<input class="form-input h-full min-w-0 flex-1 resize-none overflow-hidden border-none bg-transparent px-5 text-zinc-900 placeholder:text-zinc-500 focus:outline-0 focus:ring-0 dark:text-zinc-100 dark:placeholder:text-zinc-400" placeholder="Type a message..." value=""/>
+</div>
+<div class="flex items-center gap-2 pb-1">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-lg text-amber-500">monetization_on</span>
+<span class="text-xs font-bold text-zinc-800 dark:text-zinc-200">1</span>
+</div>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-xl">send</span>
+</button>
+</div>
+</div>
+<!-- iOS Keyboard -->
+<div class="w-full">
+<div class="w-full bg-cover bg-center bg-no-repeat group-[.dark]/design-root:hidden" data-alt="Light mode iOS keyboard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEhk_iPX5QjtR5W1jbn_53KZo9WSeM9F8Few6XqHijA5pRVSdePuovTvcYeMar6hc2otpSkz1Ndy1psALLliP_pdQkX3EjMGMS89dhDP6vG9dJ0ZTMvq-8rCuJdWa8LTOJIa4GmSkXobRxe_CXY1kF3CCF3tjaaI_kQCs-FjD2H0-rlDaTqbR8uxO5LhRgPTE7Z_U19-P2zKxyYnmFff-xWmpVRGeqSBteUZfHQn60mp1ZWTTTTSjXRQNWPIW1fQw7TJXREH2pSn8"); aspect-ratio: 390 / 291;'></div>
+<div class="hidden w-full bg-cover bg-center bg-no-repeat group-[.dark]/design-root:block" data-alt="Dark mode iOS keyboard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0xvkMvfRxP-fU6FEpesvha8k0YKQEbulxgwbp64wPGgiMflNXeODxGYIqBKTmqc5a9bB5soMphJrqtGOyQO3CnG6y0AXGfpXC5-urZwgcCm2zpiZyLE1VFzQAnnuvOq9AJLo7ql6_JIDn1C4iWVfiFlRVYso2BnbH9eg00ap2WI8wpvxhqydwB2EmApAui7vXZ_FDIf_KfHVAmm3UfU_nNbKyAPbXoSejfvLGe8cAq_Rq4fh5wAjacgPFeOV_X0l4Xjb-FNUw18Q"); aspect-ratio: 390 / 291;'></div>
+</div>
+</div>
+</div>
+</body></html>

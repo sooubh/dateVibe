@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DateVibe - Login &amp; Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b8c",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-[#FFF0F5] to-[#E6E6FA] dark:from-[#2e151e] dark:to-[#1c1c2e] p-4">
+<div class="absolute top-0 left-0 h-full w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDE720LrOBekkErTBc2ZP_Lp075Mm82qNZjvajAQojREgw7XVsBABOVifVVs-OlIHc9qrCMhNJ5PFjPd114vrVQRXavBvPO9Z2xBXBTgYr-gMoX_tte95IXVXS-lREjHEirsmTYnXhn6qxgkvThf5HFSgvPUlRcjzKOzJGsiTCmpaqwa-h272nu7-_ZJEqUV5abLgZGnpBaQa50Y2C6JaaPW-BFypjjSTGo3glJlrncr3QJ3P7kjbeTwhsal8WVxZo1-qLUxjQGT8E'); opacity: 0.5;"></div>
+<main class="relative z-10 flex w-full max-w-sm flex-col items-center">
+<div class="flex flex-col items-center justify-center pb-8 pt-6 text-center text-background-dark dark:text-background-light">
+<div class="relative w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-5xl">favorite</span>
+</div>
+<h1 class="font-display text-4xl font-bold tracking-tight">DateVibe</h1>
+</div>
+<div class="w-full rounded-xl bg-white/40 dark:bg-black/20 p-6 shadow-2xl shadow-primary/10 backdrop-blur-2xl dark:shadow-primary/20">
+<div class="flex flex-col gap-6">
+<h1 class="text-[#1b0d14] dark:text-[#f8f6f7] tracking-light text-[32px] font-bold leading-tight text-center">Join the Vibe</h1>
+<div class="flex">
+<div class="flex h-12 flex-1 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 p-1.5">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-background-light has-[:checked]:shadow-md has-[:checked]:text-[#1b0d14] dark:has-[:checked]:bg-background-dark dark:has-[:checked]:text-background-light text-[#9a4c73] dark:text-primary/80 text-sm font-medium leading-normal transition-all duration-300">
+<span class="truncate">Sign Up</span>
+<input checked="" class="invisible w-0" name="auth-toggle" type="radio" value="Sign Up"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-background-light has-[:checked]:shadow-md has-[:checked]:text-[#1b0d14] dark:has-[:checked]:bg-background-dark dark:has-[:checked]:text-background-light text-[#9a4c73] dark:text-primary/80 text-sm font-medium leading-normal transition-all duration-300">
+<span class="truncate">Login</span>
+<input class="invisible w-0" name="auth-toggle" type="radio" value="Login"/>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-[#1b0d14] dark:text-[#f3e7ed] text-sm font-medium leading-normal pb-2">Email Address</p>
+<div class="relative flex w-full flex-1 items-center">
+<span class="material-symbols-outlined text-[#9a4c73] absolute left-4">mail</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1b0d14] dark:text-background-light focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-primary/10 dark:bg-primary/20 h-14 placeholder:text-[#9a4c73] dark:placeholder:text-primary/80 pl-12 p-4 text-base font-normal leading-normal" placeholder="Enter your email" value=""/>
+</div>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-[#1b0d14] dark:text-[#f3e7ed] text-sm font-medium leading-normal pb-2">Password</p>
+<div class="flex w-full flex-1 items-stretch rounded-xl bg-primary/10 dark:bg-primary/20 focus-within:ring-2 focus-within:ring-primary/50">
+<span class="material-symbols-outlined text-[#9a4c73] self-center pl-4">lock</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-[#1b0d14] dark:text-background-light focus:outline-0 border-none bg-transparent h-14 placeholder:text-[#9a4c73] dark:placeholder:text-primary/80 p-4 pr-2 text-base font-normal leading-normal" placeholder="Enter your password" type="password" value=""/>
+<div class="text-[#9a4c73] flex items-center justify-center pr-4">
+<span class="material-symbols-outlined cursor-pointer">visibility_off</span>
+</div>
+</div>
+</label>
+</div>
+<button class="flex h-14 w-full items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/30 transition-transform active:scale-95">
+<span class="font-bold text-base">Create Account</span>
+</button>
+<div class="flex items-center gap-4">
+<hr class="flex-grow border-t border-primary/20 dark:border-primary/40"/>
+<p class="text-sm text-[#9a4c73] dark:text-primary/80">or</p>
+<hr class="flex-grow border-t border-primary/20 dark:border-primary/40"/>
+</div>
+<div class="flex items-center justify-center gap-4">
+<button class="flex h-12 w-12 items-center justify-center rounded-full bg-background-light dark:bg-background-dark/80 shadow-md">
+<img alt="Google logo" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu_GjWEtdcRQCe_6m50S76zQcsjrolIgrgwG-Y3kZvOMwgT0VpDjn6MbOaJTx1jYynQEsUvvtDiOBPhnKWH-VkaPUEnf5Q93gHqLMoxBb4WrKYMBAaCvUVw91f9HrsVuyTMHZOzqlCS5h_atZlHQqhBzd6fPCF7DvG_6gNnodxSn-SgV30uMGosvzfrpzOG-4Yxk0NYG9AvnDaSQHzWuhF--tV7LQfanzupbGkU9uGMeGB7uYPQVLy1W-u-wLqyZhOjucnSdpn3-M"/>
+</button>
+<button class="flex h-12 w-12 items-center justify-center rounded-full bg-background-light dark:bg-background-dark/80 shadow-md">
+<img alt="Apple logo" class="h-6 w-6 dark:invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALFolUSLK2hlTtsl8aRuwJVmjibKVMyF5ze_TCVURYsaEumKLY9dekJ8iqlWP4Vd_jhNO-VPZqEewS5WdKEw088TYl5pgSBobJGLNbfZzszzbb0M66mH0MIQpqxcIF5D0TeSnTzSXjkmFj9JgRA0BRUnxuKXibG-ofxnRVUVFDYdsy4535p3xZlxxgIs28SQ9DyXUUN-6npAZ4bYZ1dEQO1w5yyzCAKSiWlZzs1N9ED1AT_g759kEJW1sL6wm19mZa0gjdtk41ZzE"/>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center">
+<p class="text-xs text-black/50 dark:text-white/50">
+                    By continuing, you agree to our <a class="font-semibold text-primary/80 dark:text-primary/90 underline" href="#">Terms of Service</a> and <a class="font-semibold text-primary/80 dark:text-primary/90 underline" href="#">Privacy Policy</a>.
+                </p>
+</div>
+</main>
+</div>
+</body></html>

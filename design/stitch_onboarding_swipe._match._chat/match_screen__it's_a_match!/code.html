@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Match Popup: Celebration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glassmorphism {
+            background: rgba(45, 23, 36, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .heart-icon {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            background-image: linear-gradient(135deg, #ee2b8c, #a164e3);
+        }
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100%) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f00;
+            opacity: 0;
+            animation: confetti-fall 3s linear infinite;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    keyframes: {
+                        celebrate: {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                            '50%': { transform: 'scale(1.1)', opacity: '0.9' },
+                        },
+                        heartbeat: {
+                          '0%, 100%': { transform: 'scale(1)' },
+                          '50%': { transform: 'scale(1.2)' },
+                        },
+                    },
+                    animation: {
+                       celebrate: 'celebrate 1.5s ease-in-out infinite',
+                       heartbeat: 'heartbeat 1s ease-in-out',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-background-light p-4 group/design-root overflow-hidden dark:bg-background-dark">
+<div class="absolute inset-0 z-0 bg-gradient-to-b from-[#fde9f1] to-[#f4e8fd] dark:from-[#3a1a2b] dark:to-[#2e1d3e] opacity-70"></div>
+<div class="absolute inset-0 bg-black/10 dark:bg-black/30 backdrop-blur-sm z-10"></div>
+<div class="absolute inset-0 z-20 pointer-events-none overflow-hidden">
+<span class="material-symbols-outlined absolute top-[5%] left-[10%] text-5xl text-primary/60 -rotate-12 animate-celebrate" style="animation-delay: 0.1s; animation-duration: 2s; fill: 1;">favorite</span>
+<span class="material-symbols-outlined absolute top-[15%] right-[15%] text-3xl text-purple-400/50 rotate-12 animate-celebrate" style="fill: 1;">favorite</span>
+<span class="material-symbols-outlined absolute bottom-[20%] left-[5%] text-4xl text-sky-400/50 rotate-6 animate-celebrate" style="animation-delay: 0.5s;">favorite</span>
+<span class="material-symbols-outlined absolute bottom-[10%] right-[10%] text-6xl text-primary/60 -rotate-6 animate-celebrate" style="fill: 1; animation-duration: 2.5s;">favorite</span>
+<span class="material-symbols-outlined absolute top-[50%] left-[20%] text-2xl text-peach-400/50 rotate-12 animate-celebrate" style="animation-delay: 0.3s; animation-duration: 1.8s;">favorite</span>
+<span class="material-symbols-outlined absolute top-[40%] right-[30%] text-4xl text-purple-400/50 rotate-12 animate-celebrate" style="fill: 1; animation-delay: 0.2s;">favorite</span>
+</div>
+<div class="relative z-30 flex w-full max-w-sm flex-col items-center justify-center rounded-xl bg-white/70 p-6 pt-10 text-center shadow-2xl shadow-primary/20 backdrop-blur-2xl dark:bg-background-dark/70 dark:shadow-primary/10">
+<div class="flex flex-col items-center">
+<h1 class="text-[#1b0d14] dark:text-white tracking-tight text-5xl font-extrabold leading-tight animate-celebrate">It’s a Match!</h1>
+<div class="relative mt-8 mb-6 flex items-center justify-center -space-x-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover border-4 rounded-full size-36 border-white/70 shadow-xl shadow-primary/30" data-alt="Photo of the user, a smiling person with brown hair." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFr3zC83Sfx2_EN42KYrjzDQMpGmmRpMRCvwyo6QpTpCPQPd5u8yC5_ES05YalQmmxogHSeuoBrqcDrDxllKqz4SS81pgGZE6ByqsBI12DFrQEjmiCi1rh1sSXkF9BwljOYOPqx3Nj6JfSVOQhJJPKJGil1e8tI8Q5DdMBFvJCJFVCe_8e4W5ApwjIItB8L-qQW6tt6fJFDN067oEiCTCcjUeNfTp6UeMzC_XIXrWCRHpna0dRAfV5ZcQpk1BvHChtU9c5DgTBy80');"></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover border-4 rounded-full size-36 border-white/70 shadow-xl shadow-purple-500/30" data-alt="Photo of Jane, the matched user, a person with blonde hair laughing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmZvZfaQIBQoUIEeuexZm2nmLSM_VpZopnGeYUOqX37M8Hnsi4G1IzYRq5hLgi-ppLCoboIVZLrOxh67uKd1-OEXJqkDuDWjiGUi1YKMFF5QXAq4y30ITFHWcAtSA_1ln-oJTgw47SSYqQYh4JASsGmCRRwZvkQ_UubzxPrbSrCfLUYL_ELRfotFqzMgTbPo4JfKiSwMlyqeKhDrEjwro-mdaq5qiqk7H81TpiS5Inp9QB8kA9OogCHfjrMZ8l4U-vNpR0tF4W_Mo');"></div>
+<div class="absolute flex items-center justify-center size-14 rounded-full text-white shadow-lg animate-heartbeat" style="background-image: linear-gradient(135deg, #ee2b8c, #a164e3); transform: translate(0, 4px);">
+<span class="material-symbols-outlined text-3xl" data-icon="favorite" style="--material-symbols-fill: 1;">favorite</span>
+</div>
+</div>
+<p class="text-[#1b0d14] dark:text-gray-200 text-lg font-normal leading-normal pb-6 pt-2 px-4 text-center">You and Jane have liked each other.</p>
+<div class="w-full max-w-xs px-2 space-y-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 flex-1 w-full text-white text-lg font-bold leading-normal tracking-[0.015em] transition-all duration-300 bg-gradient-to-r from-primary to-[#a164e3] hover:shadow-xl hover:shadow-primary/30 active:scale-95">
+<span class="truncate">Start Chat</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-4 flex-1 w-full bg-transparent text-[#1b0d14] dark:text-gray-300 text-base font-bold leading-normal tracking-[0.015em] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="truncate">Keep Swiping</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

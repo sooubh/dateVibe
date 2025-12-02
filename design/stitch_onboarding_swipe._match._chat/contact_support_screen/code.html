@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Support Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glassmorphic-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ec1313",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221010",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-gradient-to-br from-[#FFDAB9] via-[#E6E6FA] to-[#87CEEB] dark:bg-gradient-to-br dark:from-[#2a1a1f] dark:via-[#1a1a2e] dark:to-[#1a2a2e] overflow-y-auto">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between bg-transparent flex-shrink-0">
+<div class="flex size-12 shrink-0 items-center text-gray-800 dark:text-white">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios_new</span>
+</div>
+<h1 class="text-gray-900 dark:text-white text-lg font-bold leading-tight flex-1 text-center">Contact Support</h1>
+<div class="flex size-12 shrink-0 items-center"></div> <!-- Spacer -->
+</div>
+<!-- Headline -->
+<div class="px-6 pt-5 pb-6">
+<h2 class="text-gray-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight text-left">How can we help you?</h2>
+</div>
+<!-- Support Options List -->
+<div class="flex flex-col gap-4 px-4 flex-grow">
+<!-- List Item: Chat -->
+<div class="flex items-center gap-4 p-4 min-h-[72px] justify-between glassmorphic-card rounded-xl">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-full bg-[#FF69B4]/20 shrink-0 size-12">
+<span class="material-symbols-outlined text-[#FF69B4] text-2xl">chat_bubble</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Chat with Admin</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">For immediate assistance</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- List Item: Email -->
+<div class="flex items-center gap-4 p-4 min-h-[72px] justify-between glassmorphic-card rounded-xl">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-full bg-[#9370DB]/20 shrink-0 size-12">
+<span class="material-symbols-outlined text-[#9370DB] text-2xl">mail</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Email Us</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Get a response within 24 hours</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- List Item: Query Form -->
+<div class="flex items-center gap-4 p-4 min-h-[72px] justify-between glassmorphic-card rounded-xl">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-full bg-[#FFA07A]/20 shrink-0 size-12">
+<span class="material-symbols-outlined text-[#FFA07A] text-2xl">description</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Submit a Query</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-2">Fill out our form for detailed issues</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-10"></div> <!-- Spacer at bottom -->
+</div>
+</body></html>

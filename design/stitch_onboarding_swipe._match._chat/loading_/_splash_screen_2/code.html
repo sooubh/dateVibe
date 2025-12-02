@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DateVibe - Loading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+    @layer utilities {
+      @keyframes pulse-heart {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.9;
+        }
+      }
+      .animate-pulse-heart {
+        animation: pulse-heart 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes gradient-flow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animate-gradient-flow {
+        background-size: 200% 200%;
+        animation: gradient-flow 10s ease infinite;
+      }
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ee2b8c",
+            "background-light": "#f8f6f7",
+            "background-dark": "#221019",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+     .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-rose-100 via-purple-100 to-sky-100 dark:from-rose-900/50 dark:via-purple-900/50 dark:to-sky-900/50 animate-gradient-flow">
+<div class="absolute -top-1/4 -left-1/4 h-1/2 w-1/2 rounded-full bg-pink-300/30 blur-3xl dark:bg-pink-500/10"></div>
+<div class="absolute -bottom-1/4 -right-1/4 h-1/2 w-1/2 rounded-full bg-sky-300/30 blur-3xl dark:bg-sky-500/10"></div>
+<div class="absolute top-1/2 left-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-300/20 blur-3xl dark:bg-purple-500/10"></div>
+<div class="relative z-10 flex flex-col items-center justify-center gap-6 text-center">
+<div class="relative flex h-28 w-28 items-center justify-center rounded-xl bg-white/30 p-4 shadow-xl shadow-pink-200/50 backdrop-blur-2xl ring-1 ring-white/50 dark:bg-black/10 dark:shadow-none dark:ring-white/20">
+<span class="material-symbols-outlined text-7xl text-primary animate-pulse-heart" data-icon="favorite">favorite</span>
+</div>
+<h1 class="text-5xl font-bold tracking-tighter text-gray-800 dark:text-white" style="text-shadow: 0 2px 10px rgba(0,0,0,0.1)">DateVibe</h1>
+</div>
+</div>
+
+</body></html>

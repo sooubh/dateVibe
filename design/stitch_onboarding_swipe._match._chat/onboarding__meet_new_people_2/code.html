@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding: Meet New People</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FF6B6B",
+            "secondary": "#FF8E53",
+            "accent-pink": "#FFC3A0",
+            "accent-purple": "#A0C4FF",
+            "accent-blue": "#9BF6FF",
+            "background-light": "#FFF7F5",
+            "background-dark": "#1A090D",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "1.5rem",
+            "xl": "2.5rem",
+            "full": "9999px"
+          },
+          boxShadow: {
+            'soft': '0 10px 25px -5px rgba(255, 107, 107, 0.2), 0 8px 10px -6px rgba(255, 107, 107, 0.2)',
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 antialiased">
+<div class="relative flex min-h-full w-full flex-col group/design-root overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-50">
+<div class="absolute -top-1/4 left-1/2 -translate-x-1/2 w-[150%] h-[150%] bg-gradient-to-br from-accent-pink/80 via-accent-purple/60 to-accent-blue/70 dark:from-primary/20 dark:via-accent-purple/10 dark:to-accent-blue/10 blur-3xl animate-[spin_20s_linear_infinite_reverse]"></div>
+</div>
+<div class="relative z-10 flex flex-1 flex-col p-6 pb-8">
+<header class="flex justify-end items-center h-12">
+<button class="text-primary/80 dark:text-primary/90 text-sm font-bold tracking-wide">Skip</button>
+</header>
+<main class="flex-1 flex flex-col justify-center">
+<div class="flex-grow flex items-center justify-center p-4 -mt-10">
+<div class="relative w-full max-w-sm aspect-square">
+<div class="absolute inset-0 bg-white/40 dark:bg-white/10 rounded-xl backdrop-blur-xl shadow-lg border border-white/20"></div>
+<div class="relative w-full h-full p-6 sm:p-8 flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-luminosity opacity-90" data-alt="Two stylized, abstract orbs, one pink and one blue, gently floating and overlapping against a soft, dreamy background, representing connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAROeUfH6WZ65jg648gjo742H9wX7z_gCoR_sbJ9bd0UgDu7STZML7qwQdPJB0G6OsJfh506mDdiTaNcfHv5Adg84MY9SOIScsWUCFAhfMAPnfprGTQtXc_WZumMyt1Y5i8pE3DY5ya2KL-yLQyjGMaEwA6qWobNfuPnrF8GwkHi5pWrdm0MEJzbZgt5API1M4T3MvTSTWLEGQmmQFOdGk1VP0QDXZU7bDOhFKN7e6o5dGFFQ_1kePvfcpqzyuOL6pK-M6u4_cdmu0"/>
+</div>
+</div>
+</div>
+<div class="text-center px-4">
+<h1 class="text-slate-900 dark:text-white tracking-tighter text-4xl md:text-5xl font-extrabold leading-tight">Meet new people</h1>
+<p class="text-slate-600 dark:text-slate-300 text-base font-medium leading-relaxed mt-3 max-w-sm mx-auto">Discover genuine connections with people who share your vibe.</p>
+</div>
+</main>
+<footer class="flex-shrink-0 mt-8">
+<div class="flex w-full flex-row items-center justify-center gap-2 py-5">
+<div class="h-2 w-6 rounded-full bg-primary"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+</div>
+<div class="flex py-3">
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 bg-gradient-to-r from-primary to-secondary text-white text-lg font-bold leading-normal tracking-wide shadow-soft transition-transform active:scale-95">
+<span class="truncate">Get Started</span>
+<span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

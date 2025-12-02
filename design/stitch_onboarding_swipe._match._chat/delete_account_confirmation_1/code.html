@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delete Account Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glassmorphic-card {
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen w-full flex-col overflow-hidden bg-gradient-to-b from-[#FFDAB9] to-[#FFC0CB] dark:from-[#4A0E0E] dark:to-[#3B1238]">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Delete Account</h2>
+</div>
+<!-- Main Content -->
+<div class="flex flex-1 flex-col justify-center items-center px-4 pb-12">
+<div class="glassmorphic-card w-full max-w-md rounded-xl p-6 flex flex-col items-center shadow-lg">
+<!-- Icon -->
+<div class="flex items-center justify-center size-16 bg-white/20 rounded-full mb-6">
+<span class="material-symbols-outlined text-white text-4xl">warning</span>
+</div>
+<!-- Headline Text -->
+<h1 class="text-white tracking-light text-[32px] font-bold leading-tight px-4 text-center pb-3">Are you sure you want to leave?</h1>
+<!-- Body Text -->
+<p class="text-white/80 text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
+                    Deleting your account will permanently erase all your matches, messages, photos, and profile data.
+                </p>
+<!-- Meta Text -->
+<p class="text-white text-sm font-bold leading-normal pb-6 pt-1 px-4 text-center">This action cannot be undone.</p>
+<!-- Button Group -->
+<div class="flex w-full flex-col items-stretch gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-[#E63946] text-white text-base font-bold leading-normal tracking-[0.015em] w-full transition-transform active:scale-95">
+<span class="truncate">Delete Permanently</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-transparent text-white text-base font-bold leading-normal tracking-[0.015em] w-full transition-transform active:scale-95">
+<span class="truncate">Cancel</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

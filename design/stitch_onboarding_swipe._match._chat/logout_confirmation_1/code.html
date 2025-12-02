@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logout Confirmation - DateVibe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b8c",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+      .dark .glassmorphism {
+        background: rgba(34, 16, 25, 0.4);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img class="h-full w-full object-cover" data-alt="Abstract gradient background with soft pink, blue, and orange tones, creating a dreamy, blurred effect." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoJJV-BDOtpHOBBpoAPX2mBhgONKTIvAnmOcCdoAEdFbHVXeUnFH8ZgZpym9pcaWT6dNZa7C9uaJFVkSzk5hF_xh1rWlAtWEuHPfp9lPqeegPm4mX6fxc0fJ0juewHxhi9cOV1QNGOSDacMIT1iWqF69UZ63GSrmDHMaZ96DxYIWxN7XHP3KbKEuXzGS3kmtg-Svhs-PfZy1v-P-kFvyBEj4KIXiatsst0Efak-Ytw4ojpL-j-2iLRg3lFw6P8XOrPlRpZa-EN73c"/>
+</div>
+<!-- Overlay/Scrim -->
+<div class="absolute inset-0 z-10 bg-black/50 dark:bg-black/70"></div>
+<!-- Logout Modal -->
+<div class="relative z-20 flex w-full max-w-sm flex-col items-center justify-center p-4">
+<div class="glassmorphism flex w-full flex-col items-center gap-4 rounded-xl border border-white/20 p-8 shadow-2xl dark:border-white/10">
+<h2 class="text-white tracking-light text-[28px] font-bold leading-tight text-center">Leaving so soon?</h2>
+<p class="text-white/80 text-base font-normal leading-normal text-center">Are you sure you want to log out?</p>
+<div class="flex w-full flex-col items-stretch gap-3 pt-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105">
+<span class="truncate">Log Out</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-white/20 text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105 dark:bg-white/10">
+<span class="truncate">Cancel</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>
