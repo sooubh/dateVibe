@@ -1,21 +1,71 @@
 import 'package:flutter/material.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
 
   @override
+  State<OtpScreen> createState() => _OtpScreenState();
+}
+
+class _OtpScreenState extends State<OtpScreen> {
+  final List<TextEditingController> _controllers = List.generate(
+    4,
+    (index) => TextEditingController(),
+  );
+  final List<FocusNode> _focusNodes = List.generate(4, (index) => FocusNode());
+
+  @override
+  void dispose() {
+    for (var controller in _controllers) {
+      controller.dispose();
+    }
+    for (var node in _focusNodes) {
+      node.dispose();
+    }
+    super.dispose();
+  }
+
+  void _onChanged(String value, int index) {
+    if (value.isNotEmpty) {
+      if (index < 3) {
+        _focusNodes[index + 1].requestFocus();
+      } else {
+        _focusNodes[index].unfocus();
+      }
+    } else {
+      if (index > 0) {
+        _focusNodes[index - 1].requestFocus();
+      }
+    }
+  }
+
+  void _verifyOtp() {
+    // Mock verification
+    Navigator.pushNamed(context, '/profile_details');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor = Theme.of(context).textTheme.bodyLarge?.color;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [
-              Color(0xFFFFDAB9), // Peach
-              Color(0xFFFFC0CB), // Warm Pink
-              Color(0xFFC7A4FF).withOpacity(0.3), // Soft Purple with opacity
-            ],
+            colors: isDark
+                ? [
+                    const Color(0xFF221019),
+                    const Color(0xFF4A2040),
+                    const Color(0xFF221019),
+                  ]
+                : [
+                    const Color(0xFFFFDAB9), // Peach
+                    const Color(0xFFFFC0CB), // Warm Pink
+                    const Color(0xFFE6E6FA), // Soft Purple (approx)
+                  ],
           ),
         ),
         child: SafeArea(
@@ -27,127 +77,106 @@ class OtpScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     IconButton(
-                      icon: const Icon(Icons.arrow_back_ios_new),
+                      icon: Icon(Icons.arrow_back_ios_new, color: textColor),
                       onPressed: () => Navigator.pop(context),
-                      color: const Color(0xFF4A4A4A), // Warm Grey
                     ),
-                    const Expanded(
+                    Expanded(
                       child: Text(
                         "Verify Your Number",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF4A4A4A),
+                          color: textColor,
                         ),
                       ),
                     ),
-                    const SizedBox(width: 48), // Balance back button
+                    const SizedBox(width: 48), // Spacer
                   ],
                 ),
               ),
 
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(24),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                      const SizedBox(height: 40),
+                      Text(
                         "Enter the 4-digit code",
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF4A4A4A),
+                          color: textColor,
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      const Text(
+                      const SizedBox(height: 16),
+                      Text(
                         "We sent a verification code to\n+1 (***) ***-1234",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
-                          color: Color(0xFF4A4A4A),
+                          color: textColor?.withOpacity(0.8),
                         ),
                       ),
                       const SizedBox(height: 48),
 
                       // OTP Inputs
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(
                           4,
                           (index) => Container(
-                            width: 64,
-                            height: 80,
+                            margin: const EdgeInsets.symmetric(horizontal: 8),
+                            width: 60,
+                            height: 70,
                             decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.3),
-                              borderRadius: BorderRadius.circular(16),
+                              borderRadius: BorderRadius.circular(12),
                               border: Border.all(
                                 color: Colors.white.withOpacity(0.2),
                               ),
                             ),
-                            child: const TextField(
+                            child: TextField(
+                              controller: _controllers[index],
+                              focusNode: _focusNodes[index],
                               textAlign: TextAlign.center,
                               keyboardType: TextInputType.number,
                               maxLength: 1,
                               style: TextStyle(
-                                fontSize: 32,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
-                                color: Color(0xFF4A4A4A),
+                                color: textColor,
                               ),
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 counterText: "",
                                 border: InputBorder.none,
                               ),
+                              onChanged: (value) => _onChanged(value, index),
                             ),
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
 
-              // Footer
-              Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      height: 56,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamedAndRemoveUntil(
-                            context,
-                            '/profile_details',
-                            (route) => false,
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          shadowColor: Colors.transparent,
-                          padding: EdgeInsets.zero,
-                        ).copyWith(elevation: WidgetStateProperty.all(0)),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [
-                                Color(0xFFFF69B4), // Deep Pink
-                                Color(0xFFC7A4FF), // Soft Purple
-                              ],
+                      const SizedBox(height: 60),
+
+                      // Verify Button
+                      SizedBox(
+                        width: double.infinity,
+                        height: 56,
+                        child: ElevatedButton(
+                          onPressed: _verifyOtp,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Theme.of(context).primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
                             ),
-                            borderRadius: BorderRadius.circular(28),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0xFFFF69B4).withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
+                            elevation: 8,
+                            shadowColor: Theme.of(
+                              context,
+                            ).primaryColor.withOpacity(0.3),
                           ),
-                          alignment: Alignment.center,
                           child: const Text(
                             "Verify & Continue",
                             style: TextStyle(
@@ -158,24 +187,17 @@ class OtpScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 16),
-                    RichText(
-                      text: const TextSpan(
-                        text: "Didn't get a code? ",
-                        style: TextStyle(color: Color(0xFF4A4A4A)),
-                        children: [
-                          TextSpan(
-                            text: "Resend in 0:45s",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        ],
+
+                      const SizedBox(height: 24),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Didn't get a code? Resend in 0:45s",
+                          style: TextStyle(color: textColor?.withOpacity(0.8)),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

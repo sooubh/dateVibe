@@ -84,8 +84,6 @@ class _MatchListScreenState extends State<MatchListScreen> {
     },
   ];
 
-  int _selectedIndex = 1; // Default to Matches tab
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -349,57 +347,6 @@ class _MatchListScreenState extends State<MatchListScreen> {
               ),
             ],
           ),
-        ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Theme.of(context).brightness == Brightness.dark
-              ? Colors.black.withOpacity(0.5)
-              : Colors.white.withOpacity(0.7),
-          border: Border(
-            top: BorderSide(
-              color: Theme.of(context).dividerColor.withOpacity(0.1),
-            ),
-          ),
-        ),
-        child: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-            if (index == 0) {
-              Navigator.pushReplacementNamed(context, '/home');
-            }
-            // Other tabs logic
-          },
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Theme.of(context).primaryColor,
-          unselectedItemColor: Theme.of(
-            context,
-          ).textTheme.bodyLarge?.color?.withOpacity(0.5),
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.explore_outlined),
-              label: "Discover",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: "Matches",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.chat_bubble_outline),
-              label: "Messages",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline),
-              label: "Profile",
-            ),
-          ],
         ),
       ),
     );

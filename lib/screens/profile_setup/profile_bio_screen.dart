@@ -9,33 +9,19 @@ class ProfileBioScreen extends StatefulWidget {
 
 class _ProfileBioScreenState extends State<ProfileBioScreen> {
   final TextEditingController _bioController = TextEditingController();
-  int _characterCount = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _bioController.addListener(() {
-      setState(() {
-        _characterCount = _bioController.text.length;
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    _bioController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor = Theme.of(context).textTheme.bodyLarge?.color;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: Theme.of(context).brightness == Brightness.dark
+            colors: isDark
                 ? [const Color(0xFF44222A), const Color(0xFF3A1D30)]
                 : [const Color(0xFFFFDAB9), const Color(0xFFFFC0CB)],
           ),
@@ -49,9 +35,8 @@ class _ProfileBioScreenState extends State<ProfileBioScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                      icon: const Icon(Icons.arrow_back_ios_new),
+                      icon: Icon(Icons.arrow_back_ios_new, color: textColor),
                       onPressed: () => Navigator.pop(context),
-                      color: Theme.of(context).textTheme.bodyLarge?.color,
                     ),
                     Expanded(
                       child: Text(
@@ -60,84 +45,67 @@ class _ProfileBioScreenState extends State<ProfileBioScreen> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context).textTheme.bodyLarge?.color,
+                          color: textColor,
                         ),
                       ),
                     ),
-                    const SizedBox(width: 48), // Balance back button
+                    const SizedBox(width: 48),
                   ],
                 ),
               ),
 
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(24.0),
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Tell us about yourself...",
-                        style: Theme.of(context).textTheme.headlineMedium
-                            ?.copyWith(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: textColor,
+                        ),
                       ),
                       const SizedBox(height: 24),
 
-                      // Bio Input
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color:
-                                Theme.of(context).brightness == Brightness.dark
-                                ? Colors.black.withOpacity(0.2)
-                                : Colors.white.withOpacity(0.5),
-                            borderRadius: BorderRadius.circular(24),
-                            border: Border.all(
-                              color: Colors.white.withOpacity(0.2),
+                      Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.2),
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            TextField(
+                              controller: _bioController,
+                              maxLines: 8,
+                              maxLength: 500,
+                              style: TextStyle(color: textColor),
+                              decoration: InputDecoration(
+                                hintText: "Your bio goes here...",
+                                hintStyle: TextStyle(
+                                  color: textColor?.withOpacity(0.5),
+                                ),
+                                border: InputBorder.none,
+                                counterText: "",
+                              ),
                             ),
-                          ),
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            children: [
-                              Expanded(
-                                child: TextField(
-                                  controller: _bioController,
-                                  maxLines: null,
-                                  maxLength: 500,
-                                  decoration: InputDecoration(
-                                    hintText: "Your bio goes here...",
-                                    border: InputBorder.none,
-                                    counterText: "",
-                                    hintStyle: TextStyle(
-                                      color: Theme.of(context)
-                                          .textTheme
-                                          .bodyLarge
-                                          ?.color
-                                          ?.withOpacity(0.5),
-                                    ),
-                                  ),
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Theme.of(
-                                      context,
-                                    ).textTheme.bodyLarge?.color,
-                                  ),
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: Text(
+                                "${_bioController.text.length}/500",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: textColor?.withOpacity(0.5),
                                 ),
                               ),
-                              Align(
-                                alignment: Alignment.bottomRight,
-                                child: Text(
-                                  "$_characterCount/500",
-                                  style: TextStyle(
-                                    color: Theme.of(context)
-                                        .textTheme
-                                        .bodyLarge
-                                        ?.color
-                                        ?.withOpacity(0.5),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -155,7 +123,24 @@ class _ProfileBioScreenState extends State<ProfileBioScreen> {
                     onPressed: () {
                       Navigator.pushNamed(context, '/profile_interests');
                     },
-                    child: const Text("Next"),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      elevation: 8,
+                      shadowColor: Theme.of(
+                        context,
+                      ).primaryColor.withOpacity(0.3),
+                    ),
+                    child: const Text(
+                      "Next",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ),

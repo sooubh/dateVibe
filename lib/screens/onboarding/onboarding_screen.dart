@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/theme/app_theme.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -50,12 +49,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: Theme.of(context).brightness == Brightness.dark
-              ? AppTheme.darkGradient
-              : AppTheme.lightGradient,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: isDark
+                ? [
+                    const Color(0xFF2E1A29),
+                    const Color(0xFF1D1A2F),
+                    const Color(0xFF301D1A),
+                  ]
+                : [
+                    const Color(0xFFF9E7F4),
+                    const Color(0xFFE8E2F6),
+                    const Color(0xFFFBE9E5),
+                  ],
+          ),
         ),
         child: SafeArea(
           child: Column(
@@ -68,11 +80,31 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   child: TextButton(
                     onPressed: _finishOnboarding,
                     child: Text(
-                      "Skip for now",
+                      "Skip",
                       style: TextStyle(
-                        color: Theme.of(context).primaryColor.withOpacity(0.8),
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.bold,
                       ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Page Indicators (Moved to top as per design)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  _onboardingData.length,
+                  (index) => AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
+                    height: 8,
+                    width: 8, // Design shows dots, not bars
+                    decoration: BoxDecoration(
+                      color: _currentPage == index
+                          ? Theme.of(context).primaryColor
+                          : Theme.of(context).primaryColor.withOpacity(0.3),
+                      shape: BoxShape.circle,
                     ),
                   ),
                 ),
@@ -97,47 +129,38 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
 
-              // Page Indicators
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  _onboardingData.length,
-                  (index) => AnimatedContainer(
-                    duration: const Duration(milliseconds: 300),
-                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                    height: 8,
-                    width: _currentPage == index ? 24 : 8,
-                    decoration: BoxDecoration(
-                      color: _currentPage == index
-                          ? Theme.of(context).primaryColor
-                          : Theme.of(context).primaryColor.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 32),
-
               // Continue Button
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24,
-                  vertical: 16,
+                  vertical: 24,
                 ),
                 child: SizedBox(
                   width: double.infinity,
                   height: 56,
                   child: ElevatedButton(
                     onPressed: _nextPage,
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      elevation: 8,
+                      shadowColor: Theme.of(
+                        context,
+                      ).primaryColor.withOpacity(0.3),
+                    ),
                     child: Text(
                       _currentPage == _onboardingData.length - 1
                           ? "Get Started"
                           : "Continue",
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
             ],
           ),
         ),

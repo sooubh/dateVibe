@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_application_1/services/auth_service.dart';
+import 'package:flutter_application_1/services/database_service.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -9,6 +12,57 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _isLogin = true;
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final AuthService _authService = AuthService();
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _handleAuth() async {
+    setState(() => _isLoading = true);
+    try {
+      if (_isLogin) {
+        await _authService.signInWithEmail(
+          _emailController.text.trim(),
+          _passwordController.text.trim(),
+        );
+        if (mounted) Navigator.pushReplacementNamed(context, '/home');
+      } else {
+        UserCredential cred = await _authService.signUpWithEmail(
+          _emailController.text.trim(),
+          _passwordController.text.trim(),
+        );
+
+        // Create user document in Firestore
+        if (cred.user != null) {
+          await DatabaseService().saveUser(cred.user!, {});
+        }
+
+        // Navigate to OTP or Profile Setup after sign up
+        if (mounted) Navigator.pushNamed(context, '/otp');
+      }
+    } on FirebaseAuthException catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.message ?? "Authentication failed")),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text("An error occurred: $e")));
+      }
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -181,6 +235,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           label: "Email Address",
                           icon: Icons.mail_outline,
                           placeholder: "Enter your email",
+                          controller: _emailController,
                         ),
                         const SizedBox(height: 16),
                         _buildTextField(
@@ -189,6 +244,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           icon: Icons.lock_outline,
                           placeholder: "Enter your password",
                           isPassword: true,
+                          controller: _passwordController,
                         ),
                         const SizedBox(height: 24),
 
@@ -197,10 +253,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: double.infinity,
                           height: 56,
                           child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, '/otp');
-                            },
-                            child: Text(_isLogin ? "Login" : "Create Account"),
+                            onPressed: _isLoading ? null : _handleAuth,
+                            child: _isLoading
+                                ? const CircularProgressIndicator(
+                                    color: Colors.white,
+                                  )
+                                : Text(_isLogin ? "Login" : "Create Account"),
                           ),
                         ),
                         const SizedBox(height: 24),
@@ -277,6 +335,7 @@ class _LoginScreenState extends State<LoginScreen> {
     required String label,
     required IconData icon,
     required String placeholder,
+    required TextEditingController controller,
     bool isPassword = false,
   }) {
     return Column(
@@ -293,6 +352,7 @@ class _LoginScreenState extends State<LoginScreen> {
             borderRadius: BorderRadius.circular(12),
           ),
           child: TextField(
+            controller: controller,
             obscureText: isPassword,
             decoration: InputDecoration(
               prefixIcon: Icon(icon, color: Theme.of(context).primaryColor),

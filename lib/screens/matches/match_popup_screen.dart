@@ -41,10 +41,13 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
           Container(
             decoration: BoxDecoration(
               color: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.black.withOpacity(0.8)
-                  : Colors.white.withOpacity(0.8),
+                  ? const Color(0xFF221019).withOpacity(0.9)
+                  : const Color(0xFFF8F6F7).withOpacity(0.9),
             ),
           ),
+
+          // Confetti Animation (Simple Custom Implementation)
+          ...List.generate(20, (index) => _buildConfetti(index)),
 
           // Content
           Center(
@@ -53,7 +56,7 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.black.withOpacity(0.7)
+                    ? Colors.black.withOpacity(0.4)
                     : Colors.white.withOpacity(0.7),
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(color: Colors.white.withOpacity(0.2)),
@@ -71,9 +74,10 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
                   Text(
                     "It's a Match!",
                     style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 48,
+                      fontWeight: FontWeight.w900,
                       color: Theme.of(context).textTheme.bodyLarge?.color,
+                      letterSpacing: -1,
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -86,44 +90,54 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
                       children: [
                         // User Avatar (Left)
                         Positioned(
-                          left: 0,
+                          left: 10,
                           child: Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white, width: 4),
+                              border: Border.all(
+                                color: Colors.white.withOpacity(0.7),
+                                width: 4,
+                              ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.2),
-                                  blurRadius: 10,
+                                  color: Theme.of(
+                                    context,
+                                  ).primaryColor.withOpacity(0.3),
+                                  blurRadius: 15,
+                                  spreadRadius: 2,
                                 ),
                               ],
                             ),
                             child: const CircleAvatar(
-                              radius: 50,
+                              radius: 55,
                               backgroundImage: NetworkImage(
-                                "https://lh3.googleusercontent.com/aida-public/AB6AXuB5qpZsFfc3XAJAv2ASDTFcQf_HvhJAVOE2hdmhU4Kc5YCfctDcewa4D5CwsgkehbUK8Fb1gNetb0aO3zRQ0s1F5G-95irX8B86dL1HXz4HHX2pmzEhU67HC01DaqGQgfoJUR2XM1ZuFpTVxRgy5WETKGetTvaqpcUwtbazf8sQ3RaYXuQ-wXwQ4ajirgoE4ewN4bLx-Vvx6VQRBqa_mhp9M7p75BGRWRXvLrFj-_FL_e1QV6UmIp94-r1yLeEgfcZ2AavVZ5eVJXs",
+                                "https://lh3.googleusercontent.com/aida-public/AB6AXuAFr3zC83Sfx2_EN42KYrjzDQMpGmmRpMRCvwyo6QpTpCPQPd5u8yC5_ES05YalQmmxogHSeuoBrqcDrDxllKqz4SS81pgGZE6ByqsBI12DFrQEjmiCi1rh1sSXkF9BwljOYOPqx3Nj6JfSVOQhJJPKJGil1e8tI8Q5DdMBFvJCJFVCe_8e4W5ApwjIItB8L-qQW6tt6fJFDN067oEiCTCcjUeNfTp6UeMzC_XIXrWCRHpna0dRAfV5ZcQpk1BvHChtU9c5DgTBy80",
                               ),
                             ),
                           ),
                         ),
                         // Match Avatar (Right)
                         Positioned(
-                          right: 0,
+                          right: 10,
                           child: Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white, width: 4),
+                              border: Border.all(
+                                color: Colors.white.withOpacity(0.7),
+                                width: 4,
+                              ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.2),
-                                  blurRadius: 10,
+                                  color: Colors.purple.withOpacity(0.3),
+                                  blurRadius: 15,
+                                  spreadRadius: 2,
                                 ),
                               ],
                             ),
                             child: const CircleAvatar(
-                              radius: 50,
+                              radius: 55,
                               backgroundImage: NetworkImage(
-                                "https://lh3.googleusercontent.com/aida-public/AB6AXuB18bVsatgqgjqt98qWG-eWiBjkhtp7Ds6y8IyKMHl-UzSKOI_QJw1ht35DViXC1LLGLsj5riKQScK5WoCXvgq-42LBh6iH_P6DtcONyN5O7Wa23tuNX0JGgOlDcLuoOku0dfiA7Y05-uatODYmHo2hQXZ4NRc000MW8-3WTEk6nj9LuImvj1Qe99BGyFv2MxxXsvKlGtYx4I57YTB7z6oQxSbEvpAK1KMO5QDyN0gLqIl8N8Kf8JhHnQ-drhQz4bGWhblhG-a6sfQ",
+                                "https://lh3.googleusercontent.com/aida-public/AB6AXuAmZvZfaQIBQoUIEeuexZm2nmLSM_VpZopnGeYUOqX37M8Hnsi4G1IzYRq5hLgi-ppLCoboIVZLrOxh67uKd1-OEXJqkDuDWjiGUi1YKMFF5QXAq4y30ITFHWcAtSA_1ln-oJTgw47SSYqQYh4JASsGmCRRwZvkQ_UubzxPrbSrCfLUYL_ELRfotFqzMgTbPo4JfKiSwMlyqeKhDrEjwro-mdaq5qiqk7H81TpiS5Inp9QB8kA9OogCHfjrMZ8l4U-vNpR0tF4W_Mo",
                               ),
                             ),
                           ),
@@ -134,26 +148,24 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
                           child: ScaleTransition(
                             scale: _scaleAnimation,
                             child: Container(
-                              padding: const EdgeInsets.all(12),
+                              padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
                                   colors: [
                                     Color(0xFFEE2B8C),
                                     Color(0xFFA164E3),
                                   ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
                                 ),
                                 shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Colors.white,
-                                  width: 2,
-                                ),
                                 boxShadow: [
                                   BoxShadow(
                                     color: const Color(
                                       0xFFEE2B8C,
                                     ).withOpacity(0.4),
-                                    blurRadius: 10,
-                                    spreadRadius: 2,
+                                    blurRadius: 12,
+                                    offset: const Offset(0, 4),
                                   ),
                                 ],
                               ),
@@ -171,10 +183,10 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
 
                   const SizedBox(height: 24),
                   Text(
-                    "You and Jessica have liked each other.",
+                    "You and Jane have liked each other.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                       color: Theme.of(
                         context,
                       ).textTheme.bodyLarge?.color?.withOpacity(0.8),
@@ -216,6 +228,7 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -226,6 +239,12 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
                     onPressed: () {
                       Navigator.pop(context);
                     },
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                    ),
                     child: Text(
                       "Keep Swiping",
                       style: TextStyle(
@@ -240,6 +259,35 @@ class _MatchPopupScreenState extends State<MatchPopupScreen>
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildConfetti(int index) {
+    // Simple mock confetti
+    return Positioned(
+      top: -20,
+      left: (index * 20).toDouble() % 400,
+      child: TweenAnimationBuilder(
+        tween: Tween<double>(begin: 0, end: 1),
+        duration: Duration(milliseconds: 2000 + (index * 100)),
+        builder: (context, value, child) {
+          return Transform.translate(
+            offset: Offset((index % 2 == 0 ? 50 : -50) * value, 800 * value),
+            child: Transform.rotate(
+              angle: value * 10,
+              child: Container(
+                width: 8,
+                height: 8,
+                color: index % 3 == 0
+                    ? Colors.red
+                    : index % 3 == 1
+                    ? Colors.blue
+                    : Colors.yellow,
+              ),
+            ),
+          );
+        },
       ),
     );
   }

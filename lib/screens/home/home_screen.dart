@@ -82,11 +82,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       color: Theme.of(context).textTheme.bodyLarge?.color,
                     ),
                   ),
-                  // Chat Button
+                  // Notifications Button
                   IconButton(
-                    icon: const Icon(Icons.chat_bubble_outline),
+                    icon: const Icon(Icons.notifications_outlined),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/matches');
+                      Navigator.pushNamed(context, '/notifications');
                     },
                     color: Theme.of(context).textTheme.bodyLarge?.color,
                   ),
